@@ -11,6 +11,7 @@ import java.util.List;
 import javax.ws.rs.ClientErrorException;
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
+import javax.ws.rs.client.Entity;
 import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.GenericType;
 import javax.ws.rs.core.MediaType;
@@ -46,8 +47,70 @@ public class ClientServicePedido {
         close();
         return jsonToPedidos(pedidos);
     }
+    public List<Pedido> getPedidos(String user_id)throws ClientErrorException{
+        initPedido();
+        GenericType<String> listResponseType = new GenericType<String>(){};
+        String formato = java.text.MessageFormat.format("user/{0}", user_id);
+        webTarget = webTarget.path(formato);
+        String pedidos = "";
+        try {
+            pedidos = webTarget.request(MediaType.APPLICATION_JSON).get(listResponseType);
+        } catch (Exception e) {
+        }
+        close();
+        return jsonToPedidos(pedidos);
+    }
+//    public <T> List<Pedido> findAllPedidos(int idRestaurante,int estado) throws javax.ws.rs.ClientErrorException {
+//        initPedido();
+//        GenericType<List<Pedido>> listResponseType = new GenericType<List<Pedido>>(){};
+//        String formato = java.text.MessageFormat.format("{0}/{1}", idRestaurante,estado);
+//        webTarget = webTarget.path(formato);
+//        List<Pedido> componentes = webTarget.request(MediaType.APPLICATION_JSON).get(listResponseType);
+//        close();
+//        return componentes;
+//    } 
+    public String addPedido(Pedido requestEntity) throws ClientErrorException {
+        requestEntity.setPe_plato(convertToJson(requestEntity.getComponentes()));
+        initPedido();
+        try {
+            webTarget.request(MediaType.APPLICATION_JSON).post(Entity.entity(requestEntity, MediaType.APPLICATION_JSON), String.class);
+            close();
+            return "Pedido añadido correctamente";
+        } catch (Exception e) {
+            close();
+            return "Error, el pedido no se añadio correctamente";
+        }
+    }
     
+    public String deletePedido(int pe_id){
+        initPedido();
+        String formato = java.text.MessageFormat.format("{0}", pe_id);
+        webTarget = webTarget.path(formato);
+        try {
+            webTarget.request().delete(String.class);
+            close();
+            return "Pedido eliminado correctamente";
+        } catch (Exception e) {
+            close();
+            return "Error, el pedido con ese id no existe";
+        }
+    }
     
+    public String updatePedido(int pe_id,Pedido pedido){
+        pedido.setPe_plato(convertToJson(pedido.getComponentes()));
+        initPedido();
+        String formato = java.text.MessageFormat.format("{0}", pe_id);
+        webTarget = webTarget.path(formato);
+        Object requestEntity = pedido;
+        try {
+            webTarget.request(MediaType.APPLICATION_JSON).put(Entity.entity(requestEntity, MediaType.APPLICATION_JSON), String.class);
+            close();
+            return "Pedido actualizado correctamente";
+        } catch (Exception e) {
+            close();
+            return "Error, el pedido no se actualizado correctamente";
+        }
+    }
     
     private List<Pedido> jsonToPedidos(String jsonLista){
         List<Pedido> listaConvertida = new ArrayList<>();
@@ -96,5 +159,17 @@ public class ClientServicePedido {
             
         }
         return listaConvertida;
+    }
+    
+    
+     /**
+     * Función que convierte un objeto a un formato json 
+     * @param food objeto
+     * @return String en formato Json
+     */
+    private String convertToJson(List<Componente> componentes) {
+        Gson gson = new Gson();
+        String json = gson.toJson(componentes);
+        return json;
     }
 }

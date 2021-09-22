@@ -18,6 +18,12 @@ public interface IPedidoService {
 	 * @return todos los pedidos encontrados de un terminado restaurante y estado
 	 */
 	public List<Pedido> findPedidos(Long rest_id,byte pe_estado);
+	
+	/**
+	 * Encuentra todos los pedidos de la base de datos de un determinado usuario.
+	 * @return todos los pedidos encontrados de un terminado restaurante y estado
+	 */
+	public List<Pedido> findPedidos(String user_id);
 
 	public Pedido create(Pedido pedido) throws PedidoDomainException;
 

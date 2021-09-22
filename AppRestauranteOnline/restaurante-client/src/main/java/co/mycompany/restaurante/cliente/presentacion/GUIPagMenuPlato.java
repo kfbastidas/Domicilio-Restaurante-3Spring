@@ -1,7 +1,11 @@
 package co.mycompany.restaurante.cliente.presentacion;
+import co.mycompany.restaurante.cliente.access.Factory;
+import co.mycompany.restaurante.cliente.access.IRestauranteAccess;
 import co.mycompany.restaurante.cliente.domain.TipoUser;
 import co.mycompany.restaurante.cliente.domain.entity.Componente;
+import co.mycompany.restaurante.cliente.domain.entity.Pedido;
 import co.mycompany.restaurante.cliente.domain.entity.Restaurante;
+import co.mycompany.restaurante.cliente.domain.entity.TipoComponente;
 import static co.mycompany.restaurante.cliente.infra.Messages.warningMessage;
 import co.mycompany.restaurante.cliente.infra.Security;
 import java.awt.image.BufferedImage;
@@ -9,6 +13,8 @@ import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.List;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
@@ -326,10 +332,60 @@ public class GUIPagMenuPlato extends javax.swing.JInternalFrame {
     
     public void generarPedido(String metodoDePago){
         
-        JOptionPane.showMessageDialog(null, "Se genero el pedido con exito.\nTiempo estimado para llegar su pedido 30min", 
+        
+        IRestauranteAccess repo = Factory.getInstance().getRestauranteService();
+        Pedido pedido = new Pedido();
+        pedido.setUser_id(Security.usuario.getUser());
+        byte estado = 0;
+        pedido.setPe_estado(estado);
+        int cantidad = Integer.parseInt(lblCantidad.getText());
+        pedido.setPe_cantidad(cantidad);
+        pedido.setComponentes(obtenerComponentesDelPlato());
+        pedido.setRest_id(restaurante.getId());
+        pedido.setPe_formapago(metodoDePago);
+        pedido.setPe_precio(restaurante.getPlato().getPrecio());
+        String result = repo.addPedido(pedido);
+        String expResult = "Pedido añadido correctamente";
+        if (result.equals(expResult)) {
+            JOptionPane.showMessageDialog(null, "Se genero el pedido con exito.\nSu pedido llegara en un tiempo promedio de acuerdo a su ubicacion", 
                 "Pedido exitoso", JOptionPane.OK_OPTION);
-        
-        
+        }
+//        System.out.println(pedido);
+    }
+    
+    private List<Componente> obtenerComponentesDelPlato(){
+        IRestauranteAccess repo = Factory.getInstance().getRestauranteService();
+        List<Componente> lista = new ArrayList<>();
+        List<Componente> componentes = repo.getComponentes();
+        for (Componente componente : componentes) {
+            switch (componente.getTipo()) {
+                case ENTRADA: {
+                    if (componente.getNombre().equals(cbxEntrada.getSelectedItem().toString())) {
+                        lista.add(componente);
+                    }
+                    break;
+                }
+                case PRINCIPIO: {
+                    if (componente.getNombre().equals(cbxPrincipio.getSelectedItem().toString())) {
+                        lista.add(componente);
+                    }
+                    break;
+                }
+                case PROTEINA: {
+                    if (componente.getNombre().equals(cbxProteina.getSelectedItem().toString())) {
+                        lista.add(componente);
+                    }
+                    break;
+                }
+                case BEBIDA: {
+                    if (componente.getNombre().equals(cbxBebida.getSelectedItem().toString())) {
+                        lista.add(componente);
+                    }
+                    break;
+                }
+            }
+        }
+        return lista;
     }
     
     private boolean validarGenerarPedido(){

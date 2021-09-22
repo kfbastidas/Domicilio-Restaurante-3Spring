@@ -108,4 +108,10 @@ public class PedidoImplService implements IPedidoService {
 		return (List<Pedido>)this.pedidoDao.findPedidos(rest_id, pe_estado);
 	}
 	
+	@Override
+	@Transactional(readOnly = true)
+	public List<Pedido> findPedidos(String user_id){
+		return (List<Pedido>)this.pedidoDao.findPedidos(user_id);
+	}
+	
 }

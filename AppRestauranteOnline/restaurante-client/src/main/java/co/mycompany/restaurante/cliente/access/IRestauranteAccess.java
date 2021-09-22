@@ -133,4 +133,30 @@ public interface IRestauranteAccess {
      * @return 
      */
     public List<Pedido> getPedidos(int idRestaurante,int estado);
+    /**
+     * obtiene los pedidos de un usuario determinado
+     * @param user
+     * @return 
+     */
+    public List<Pedido> getPedidos(String user);
+    
+    /**
+     * Adiciona la informacion de los pedidos de un restaurante en un dia determinado.
+     * @param pedido
+     * @return 
+     */
+    public String addPedido(Pedido pedido);
+    /**
+     * Elimina el pedido de un usuario
+     * @param pe_id
+     * @return 
+     */
+    public String deletePedido(int pe_id);
+    /**
+     * Actualiza el pedido de un usuario determinado
+     * @param pe_id
+     * @param pedido
+     * @return 
+     */
+    public String updatePedido(int pe_id,Pedido pedido);
 }

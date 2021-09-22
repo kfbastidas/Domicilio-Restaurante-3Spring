@@ -34,6 +34,7 @@ co\mycompany\restaurante\cliente\presentacion\GUIPagAgregarPlato$9.class
 co\mycompany\restaurante\cliente\access\Factory.class
 co\mycompany\restaurante\cliente\presentacion\GUIPagAgregarPlato$2.class
 co\mycompany\restaurante\cliente\presentacion\GUIPrincipal$2.class
+co\mycompany\restaurante\cliente\infra\ClientServicePedido$2.class
 co\mycompany\restaurante\cliente\infra\imgTabla.class
 co\mycompany\restaurante\cliente\infra\Messages.class
 co\mycompany\restaurante\cliente\presentacion\GUIPagMenuPlato.class
@@ -60,6 +61,7 @@ co\mycompany\restaurante\cliente\infra\ClientServiceRestaurante.class
 co\mycompany\restaurante\cliente\presentacion\GUIPrincipal$7.class
 co\mycompany\restaurante\cliente\infra\ClientServicePedido$1.class
 co\mycompany\restaurante\cliente\presentacion\GUIPrincipal$1.class
+co\mycompany\restaurante\cliente\presentacion\GUIPagMenuPlato$5.class
 co\mycompany\restaurante\cliente\presentacion\GUIPagMenuPlato$2.class
 co\mycompany\restaurante\cliente\presentacion\GUIPrincipal.class
 co\mycompany\restaurante\cliente\domain\entity\Componente$2.class

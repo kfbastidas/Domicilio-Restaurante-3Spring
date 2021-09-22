@@ -233,4 +233,42 @@ public class RestauranteAccessImplJersey implements IRestauranteAccess{
     public List<Pedido> getPedidos(int idRestaurante,int estado){
         return this.clientPedido.getPedidos(idRestaurante, estado);
     }
+    /**
+     * Adiciona la informacion de los pedidos de un restaurante en un dia determinado.
+     * @param pedido
+     * @return 
+     */
+    @Override
+    public String addPedido(Pedido pedido){
+        return this.clientPedido.addPedido(pedido);
+    }
+    
+    /**
+     * obtiene los pedidos de un usuario determinado
+     * @param user
+     * @return 
+     */
+    @Override
+    public List<Pedido> getPedidos(String user){
+        return this.clientPedido.getPedidos(user);
+    }
+    /**
+     * Elimina el pedido de un usuario
+     * @param pe_id
+     * @return 
+     */
+    @Override
+    public String deletePedido(int pe_id){
+        return this.clientPedido.deletePedido(pe_id);
+    }
+     /**
+     * Actualiza el pedido de un usuario determinado
+     * @param pe_id
+     * @param pedido
+     * @return 
+     */
+    @Override
+    public String updatePedido(int pe_id,Pedido pedido){
+        return this.clientPedido.updatePedido(pe_id, pedido);
+    }
 }

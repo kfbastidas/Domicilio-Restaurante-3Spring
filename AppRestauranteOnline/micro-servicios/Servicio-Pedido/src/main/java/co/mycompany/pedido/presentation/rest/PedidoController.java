@@ -34,7 +34,6 @@ public class PedidoController {
 	 * Encuentra los pedidos de un id de restaurante en un estado determinado
 	 * @param rest_id
 	 * @param pe_estado
-	 * @return los pedidos
 	 * @throws PedidoDomainException
 	 */
 	@RequestMapping(value = "{rest_id}/{pe_estado}", method = RequestMethod.GET, produces = "application/json")
@@ -42,6 +41,18 @@ public class PedidoController {
 	public List<Pedido> findPedidos(@PathVariable Long rest_id,@PathVariable byte pe_estado) throws PedidoDomainException {
 		return pedidoService.findPedidos(rest_id, pe_estado);
 	}	
+	
+	/**
+	 * Encuentra los pedidos de un id de usuario determinado
+	 * @param rest_id
+	 * @param pe_estado
+	 * @throws PedidoDomainException
+	 */
+	@RequestMapping(value = "user/{user_id}", method = RequestMethod.GET, produces = "application/json")
+	@ResponseBody
+	public List<Pedido> findPedidos(@PathVariable String user_id) throws PedidoDomainException {
+		return pedidoService.findPedidos(user_id);
+	}
 	
 	/**
 	 * Crea un pedido

@@ -23,6 +23,7 @@ public class Pedido implements Serializable {
     private byte pe_estado;
     private int rest_id;
     private String user_id;
+    private String pe_plato;
     private List<Componente> componentes;
 
     public Pedido() {
@@ -30,9 +31,30 @@ public class Pedido implements Serializable {
         
     }
 
+    public Pedido(int pe_id, int pe_precio, int pe_cantidad, String pe_fecha, String pe_formapago, byte pe_estado, int rest_id, String user_id) {
+        this.pe_id = pe_id;
+        this.pe_precio = pe_precio;
+        this.pe_cantidad = pe_cantidad;
+        this.pe_fecha = pe_fecha;
+        this.pe_formapago = pe_formapago;
+        this.pe_estado = pe_estado;
+        this.rest_id = rest_id;
+        this.user_id = user_id;
+    }
+
+    
+
     
     //gets and sets
 
+    public String getPe_plato() {
+        return pe_plato;
+    }
+
+    public void setPe_plato(String pe_plato) {
+        this.pe_plato = pe_plato;
+    }
+    
     public int getPe_id() {
         return pe_id;
     }

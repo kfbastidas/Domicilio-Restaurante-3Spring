@@ -54,6 +54,8 @@ public class Pedido implements Serializable {
 	@Column(name = "pe_plato")
 	private String pe_plato;
 	
+	
+	
 	//gets and sets
 	
 	
