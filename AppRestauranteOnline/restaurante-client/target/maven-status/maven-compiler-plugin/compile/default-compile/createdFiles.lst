@@ -1,3 +1,4 @@
+co\mycompany\restaurante\cliente\presentacion\GUIPagPagos$2.class
 co\mycompany\restaurante\cliente\presentacion\GUIPagAgregarPlato.class
 co\mycompany\restaurante\cliente\presentacion\GUIPagMenuRestaurante$3.class
 co\mycompany\restaurante\cliente\presentacion\GUIPagComponente$4.class
@@ -7,6 +8,7 @@ co\mycompany\restaurante\cliente\presentacion\GUIPagAgregarPlato$4.class
 co\mycompany\restaurante\cliente\infra\Utilities.class
 co\mycompany\restaurante\cliente\presentacion\GUIPrincipal$8.class
 co\mycompany\restaurante\cliente\presentacion\GUIPrincipal$5.class
+co\mycompany\restaurante\cliente\domain\entity\Pedido.class
 co\mycompany\restaurante\cliente\presentacion\GUIPagAgregarPlato$1.class
 co\mycompany\restaurante\cliente\domain\entity\Usuario.class
 co\mycompany\restaurante\cliente\presentacion\GUIPagComponente.class
@@ -18,6 +20,7 @@ co\mycompany\restaurante\cliente\domain\User.class
 co\mycompany\restaurante\cliente\presentacion\GUIPagLogin$2.class
 co\mycompany\restaurante\cliente\domain\entity\DiaSemana.class
 co\mycompany\restaurante\cliente\presentacion\GUIPagAgregarPlato$11.class
+co\mycompany\restaurante\cliente\infra\ClientServicePedido.class
 co\mycompany\restaurante\cliente\domain\services\UserService.class
 co\mycompany\restaurante\cliente\infra\Security.class
 co\mycompany\restaurante\cliente\presentacion\GUIPrincipal$3.class
@@ -36,6 +39,8 @@ co\mycompany\restaurante\cliente\infra\Messages.class
 co\mycompany\restaurante\cliente\presentacion\GUIPagMenuPlato.class
 co\mycompany\restaurante\cliente\presentacion\GUIPrincipal$10.class
 co\mycompany\restaurante\cliente\infra\ClientServicePlato.class
+co\mycompany\restaurante\cliente\presentacion\GUIPagPagos.class
+co\mycompany\restaurante\cliente\presentacion\GUIPagPagos$4.class
 co\mycompany\restaurante\cliente\presentacion\GUIPrincipal$9.class
 co\mycompany\restaurante\cliente\presentacion\GUIPagAgregarPlato$12.class
 co\mycompany\restaurante\cliente\presentacion\GUIPagAgregarPlato$8.class
@@ -46,12 +51,14 @@ co\mycompany\restaurante\cliente\access\adapter\IRestauranteAccessJsonJersey.cla
 co\mycompany\restaurante\cliente\domain\services\RestauranteService.class
 co\mycompany\restaurante\cliente\infra\ClientServiceRestComp.class
 co\mycompany\restaurante\cliente\presentacion\GUIPrincipal$4.class
+co\mycompany\restaurante\cliente\presentacion\GUIPagPagos$3.class
 co\mycompany\restaurante\cliente\presentacion\GUIPagLogin.class
 co\mycompany\restaurante\cliente\presentacion\PruebaAdapter.class
 co\mycompany\restaurante\cliente\domain\entity\Plato.class
 co\mycompany\restaurante\cliente\presentacion\GUIPagComponente$3.class
 co\mycompany\restaurante\cliente\infra\ClientServiceRestaurante.class
 co\mycompany\restaurante\cliente\presentacion\GUIPrincipal$7.class
+co\mycompany\restaurante\cliente\infra\ClientServicePedido$1.class
 co\mycompany\restaurante\cliente\presentacion\GUIPrincipal$1.class
 co\mycompany\restaurante\cliente\presentacion\GUIPagMenuPlato$2.class
 co\mycompany\restaurante\cliente\presentacion\GUIPrincipal.class
@@ -75,4 +82,5 @@ co\mycompany\restaurante\cliente\presentacion\GUIPagAgregarPlato$5.class
 co\mycompany\restaurante\cliente\presentacion\GUIPrincipal$6.class
 co\mycompany\restaurante\cliente\domain\entity\Restaurante.class
 co\mycompany\restaurante\cliente\infra\ClientServiceRestComp$1.class
+co\mycompany\restaurante\cliente\presentacion\GUIPagPagos$1.class
 co\mycompany\restaurante\cliente\presentacion\GUIPagComponente$1.class

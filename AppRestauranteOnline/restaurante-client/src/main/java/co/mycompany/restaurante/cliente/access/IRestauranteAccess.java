@@ -2,6 +2,7 @@ package co.mycompany.restaurante.cliente.access;
 
 import co.mycompany.restaurante.cliente.domain.entity.Componente;
 import co.mycompany.restaurante.cliente.domain.entity.DiaSemana;
+import co.mycompany.restaurante.cliente.domain.entity.Pedido;
 import co.mycompany.restaurante.cliente.domain.entity.Plato;
 import co.mycompany.restaurante.cliente.domain.entity.Restaurante;
 import co.mycompany.restaurante.cliente.domain.entity.Usuario;
@@ -125,4 +126,11 @@ public interface IRestauranteAccess {
      * @return 
      */
     public Usuario getUsuario(String usuario);
+    /**
+     * obtiene los pedidos de un restaurante y estado determinado
+     * @param idRestaurante
+     * @param estado
+     * @return 
+     */
+    public List<Pedido> getPedidos(int idRestaurante,int estado);
 }

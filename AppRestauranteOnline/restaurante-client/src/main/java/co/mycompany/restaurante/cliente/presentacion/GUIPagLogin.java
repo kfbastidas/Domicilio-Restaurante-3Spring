@@ -1,6 +1,8 @@
 package co.mycompany.restaurante.cliente.presentacion;
+import co.mycompany.restaurante.cliente.domain.TipoUser;
 import co.mycompany.restaurante.cliente.domain.services.UserService;
 import static co.mycompany.restaurante.cliente.infra.Messages.successMessage;
+import co.mycompany.restaurante.cliente.infra.Security;
 /**
  *
  * @author Kevith Felipe Bastidas
@@ -11,13 +13,23 @@ public class GUIPagLogin extends javax.swing.JInternalFrame {
      */
     private final GUIPrincipal vistaPrincipal;
     /**
+     * Instancia de la vistaMenuPlato
+     */
+    private final GUIPagMenuPlato vistaMenuPlato;
+    
+    /**
      * Constructor form GUILogin
      * @param vistaPrincipal
+     * @param vistaMenuPlato
      */
-    public GUIPagLogin(GUIPrincipal vistaPrincipal) {
+    public GUIPagLogin(GUIPrincipal vistaPrincipal,GUIPagMenuPlato vistaMenuPlato) {
         initComponents();
         setSize(550, 275);
         this.vistaPrincipal = vistaPrincipal;
+        if (vistaMenuPlato!=null) {
+            btnIngresarInvitado.setText("Cancelar Pedido");
+        }
+        this.vistaMenuPlato = vistaMenuPlato;
     }
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -106,9 +118,23 @@ public class GUIPagLogin extends javax.swing.JInternalFrame {
      */
     private void btnIniciarSeccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarSeccionActionPerformed
         // TODO add your handling code here:
+        
         if (UserService.autenticacion(txtUsuario.getText(), txtClave.getText())) {
+            if (this.vistaMenuPlato != null) {
+                if (Security.usuario.getLogin() == TipoUser.ADMINISTRADOR) {
+                    successMessage("Username no existe.", "Atención");
+                    return;
+                }
+            }
             successMessage("Inicio Seccion Correctamente.", "Atención");
             vistaPrincipal.controlarSeccion();
+            
+            if (this.vistaMenuPlato!=null) {
+                
+                GUIPagPagos vistaPagos = new GUIPagPagos(vistaPrincipal, vistaMenuPlato);
+                vistaPrincipal.agregarComponente(vistaPagos);
+                vistaPagos.show();
+            }
             this.dispose();
         }
     }//GEN-LAST:event_btnIniciarSeccionActionPerformed
@@ -118,10 +144,15 @@ public class GUIPagLogin extends javax.swing.JInternalFrame {
      */
     private void btnIngresarInvitadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarInvitadoActionPerformed
         // TODO add your handling code here:
-        UserService.ponerUserInvitado();
-        successMessage("Inicio Seccion Como Invitado.", "Atención");
-        vistaPrincipal.controlarSeccion();
-        this.dispose();
+        if (this.vistaMenuPlato != null) {
+            vistaPrincipal.agregarComponente(this.vistaMenuPlato);
+            this.vistaMenuPlato.show();
+        } else {
+            UserService.ponerUserInvitado();
+            successMessage("Inicio Seccion Como Invitado.", "Atención");
+            vistaPrincipal.controlarSeccion();
+            this.dispose();
+        } 
     }//GEN-LAST:event_btnIngresarInvitadoActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

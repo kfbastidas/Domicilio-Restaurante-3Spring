@@ -8,6 +8,9 @@ package co.mycompany.restaurante.cliente.access.adapter;
 import co.mycompany.restaurante.cliente.domain.entity.Componente;
 import co.mycompany.restaurante.cliente.domain.entity.TipoComponente;
 import com.google.gson.Gson;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonParser;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,10 +25,16 @@ public class RestauranteAccessImplJsonJersey implements IRestauranteAccessJsonJe
      */
     private List<String> componentes;
     
+    private List<Componente> lista;
     /**
      * Constructor
      */
     public RestauranteAccessImplJsonJersey(){
+        lista = new ArrayList<>();
+        lista.add(new Componente(2, "frijoles", TipoComponente.PRINCIPIO));
+        lista.add(new Componente(6, "sancocho de gallina", TipoComponente.ENTRADA));
+        lista.add(new Componente(11, "chuleta de cerdo", TipoComponente.PROTEINA));
+        lista.add(new Componente(15, "limonada", TipoComponente.BEBIDA));
         if(componentes == null){
             componentes = new ArrayList<>();
             InicializarPlatos();
@@ -41,6 +50,32 @@ public class RestauranteAccessImplJsonJersey implements IRestauranteAccessJsonJe
         componentes.add(convertToJson(new Componente(4, "chuleta de pollo", TipoComponente.PROTEINA)));
     }
     
+    
+    
+    public String listaComponentes(){
+        Gson gson = new Gson();
+        String json = gson.toJson(this.lista);
+        return json;
+    }
+    
+    public List<Componente> listaComponentes2(String jsonLista){
+        Gson gson = new Gson();
+        List<Componente> listaConvertida = new ArrayList<>();
+        
+        // Obtain Array
+        JsonParser parser = new JsonParser();
+
+        // Obtain Array
+        JsonArray gsonArr = parser.parse(jsonLista).getAsJsonArray();
+        
+        for (JsonElement obj : gsonArr) {
+            String jsonComponente = obj.toString();
+            Componente comp = gson.fromJson(jsonComponente, Componente.class);
+            listaConvertida.add(comp);
+            
+        }
+        return listaConvertida;
+    }
     
     /**
      * Función que convierte un objeto a un formato json 

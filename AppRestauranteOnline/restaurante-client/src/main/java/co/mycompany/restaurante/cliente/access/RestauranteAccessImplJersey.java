@@ -1,15 +1,7 @@
 package co.mycompany.restaurante.cliente.access;
 
-import co.mycompany.restaurante.cliente.domain.entity.Componente;
-import co.mycompany.restaurante.cliente.domain.entity.DiaSemana;
-import co.mycompany.restaurante.cliente.domain.entity.Plato;
-import co.mycompany.restaurante.cliente.domain.entity.Restaurante;
-import co.mycompany.restaurante.cliente.domain.entity.Usuario;
-import co.mycompany.restaurante.cliente.infra.ClientServiceComponente;
-import co.mycompany.restaurante.cliente.infra.ClientServicePlato;
-import co.mycompany.restaurante.cliente.infra.ClientServiceRestComp;
-import co.mycompany.restaurante.cliente.infra.ClientServiceRestaurante;
-import co.mycompany.restaurante.cliente.infra.ClientServiceUsuario;
+import co.mycompany.restaurante.cliente.domain.entity.*;
+import co.mycompany.restaurante.cliente.infra.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -39,6 +31,10 @@ public class RestauranteAccessImplJersey implements IRestauranteAccess{
      */
     private ClientServiceUsuario clientUsuario;
     /**
+     * Atributo: instancia la clase ClientPedido
+     */
+    private ClientServicePedido clientPedido;
+    /**
      * Contructor por defecto de RestauranteAcessImplJersey
      */
     public RestauranteAccessImplJersey() {
@@ -47,6 +43,7 @@ public class RestauranteAccessImplJersey implements IRestauranteAccess{
         this.clientResturante = new ClientServiceRestaurante();
         this.clientRestComp = new ClientServiceRestComp();
         this.clientUsuario = new ClientServiceUsuario();
+        this.clientPedido = new ClientServicePedido();
     }
      /**
      * Adiciona la informacion del plato de un restaurante en un dia determinado.
@@ -226,5 +223,14 @@ public class RestauranteAccessImplJersey implements IRestauranteAccess{
     public Usuario getUsuario(String usuario) {
         return this.clientUsuario.getUsuario(usuario);
     }
-    
+    /**
+     * obtiene los pedidos de un restaurante y estado determinado
+     * @param idRestaurante
+     * @param estado
+     * @return 
+     */
+    @Override
+    public List<Pedido> getPedidos(int idRestaurante,int estado){
+        return this.clientPedido.getPedidos(idRestaurante, estado);
+    }
 }

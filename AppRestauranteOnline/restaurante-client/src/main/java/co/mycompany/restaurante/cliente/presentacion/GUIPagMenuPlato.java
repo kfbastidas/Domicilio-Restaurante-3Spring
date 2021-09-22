@@ -1,4 +1,5 @@
 package co.mycompany.restaurante.cliente.presentacion;
+import co.mycompany.restaurante.cliente.domain.TipoUser;
 import co.mycompany.restaurante.cliente.domain.entity.Componente;
 import co.mycompany.restaurante.cliente.domain.entity.Restaurante;
 import static co.mycompany.restaurante.cliente.infra.Messages.warningMessage;
@@ -10,6 +11,7 @@ import java.io.FileInputStream;
 import java.io.InputStream;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 /**
  *
  * @author kevith felipe bastidas
@@ -33,7 +35,7 @@ public class GUIPagMenuPlato extends javax.swing.JInternalFrame {
      * @param vistaMenuRestaurantes
      * @param vistaAgregarPlato
      */
-    public GUIPagMenuPlato(Restaurante restaurante,GUIPagMenuRestaurante vistaMenuRestaurantes,GUIPagAgregarPlato vistaAgregarPlato) {
+    public GUIPagMenuPlato(Restaurante restaurante,GUIPagMenuRestaurante vistaMenuRestaurantes,GUIPagAgregarPlato vistaAgregarPlato) {       
         initComponents();
         setSize(902,450);
         this.restaurante = restaurante;
@@ -45,9 +47,7 @@ public class GUIPagMenuPlato extends javax.swing.JInternalFrame {
         } else if (this.vistaAgregarPlato != null) {
             btnGenerarPedido.setEnabled(false);
         }
-        
         this.listarDatos();
-        
     }
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -307,9 +307,43 @@ public class GUIPagMenuPlato extends javax.swing.JInternalFrame {
      */
     private void btnGenerarPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarPedidoActionPerformed
         // TODO add your handling code here:
-        warningMessage("En construcción....", "Atención");
-        System.out.println("("+getSize().height+","+getSize().width+")");
+        if (validarGenerarPedido()) {
+            if (Security.usuario.getLogin()==TipoUser.VISITANTE) {
+                warningMessage("Tiene que iniciar seccion....", "Atención");
+                GUIPagLogin vistaLogin = new GUIPagLogin(this.vistaMenuRestaurantes.getVistaPrincipal(),this);
+                vistaMenuRestaurantes.getVistaPrincipal().agregarComponente(vistaLogin);
+                vistaLogin.show();
+            }else{
+                GUIPagPagos vistaPagos = new GUIPagPagos(this.vistaMenuRestaurantes.getVistaPrincipal(), this);
+                this.vistaMenuRestaurantes.getVistaPrincipal().agregarComponente(vistaPagos);
+                vistaPagos.show();
+                //warningMessage("Se genero el pedido....", "Atención");
+            }
+            
+        }
+        
     }//GEN-LAST:event_btnGenerarPedidoActionPerformed
+    
+    public void generarPedido(String metodoDePago){
+        
+        JOptionPane.showMessageDialog(null, "Se genero el pedido con exito.\nTiempo estimado para llegar su pedido 30min", 
+                "Pedido exitoso", JOptionPane.OK_OPTION);
+        
+        
+    }
+    
+    private boolean validarGenerarPedido(){
+        int cantidad = Integer.parseInt(lblCantidad.getText());
+        if (!cbxEntrada.getSelectedItem().toString().equals("Seleccione una opcion")
+                && !cbxPrincipio.getSelectedItem().toString().equals("Seleccione una opcion")
+                && !cbxProteina.getSelectedItem().toString().equals("Seleccione una opcion")
+                && !cbxBebida.getSelectedItem().toString().equals("Seleccione una opcion")
+                && cantidad>0) {
+            return true;
+        }else{
+            return false;
+        }
+    }
     /**
      * se devuelve a la vista que creo la referencia
      */
@@ -371,7 +405,7 @@ public class GUIPagMenuPlato extends javax.swing.JInternalFrame {
      */
     private void aumentarCantidadDePlatos(){
         int cantidad = Integer.parseInt(lblCantidad.getText());
-        if (cantidad<4) {
+        if (cantidad<10) {
             cantidad++;
             lblCantidad.setText(cantidad+"");
         }
@@ -396,6 +430,8 @@ public class GUIPagMenuPlato extends javax.swing.JInternalFrame {
         calcularPrecio();
     }//GEN-LAST:event_lblDisminuirCantidadMouseClicked
 
+    
+    
    /**
      * Lista los datos que maneja la interfaz actual
      * @param restaurante 

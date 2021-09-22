@@ -215,6 +215,7 @@ public class GUIPrincipal extends javax.swing.JFrame {
     private void mnuPedidosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuPedidosActionPerformed
         // TODO add your handling code here:
         warningMessage("En construcción....", "Atención");
+        
     }//GEN-LAST:event_mnuPedidosActionPerformed
     /**
      * Configura la cuenta - En construccion
@@ -244,7 +245,7 @@ public class GUIPrincipal extends javax.swing.JFrame {
      */
     private void mnuIniciarSecionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mnuIniciarSecionMouseClicked
         // TODO add your handling code here:
-        GUIPagLogin vistaLogin = new GUIPagLogin(this);
+        GUIPagLogin vistaLogin = new GUIPagLogin(this,null);
         agregarComponente(vistaLogin);
         vistaLogin.show();
     }//GEN-LAST:event_mnuIniciarSecionMouseClicked
