@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @ControllerAdvice
 public class GlobalDefaultExceptionHandler {
 	/**
-	 * Método para manejar la excepcion ResourceNotFoundException
+	 * Método para manejar la excepcion ResourceNotFoundException 
 	 * 
 	 * @param e ResourceNotFoundException
 	 * @return la excepción en formato Json

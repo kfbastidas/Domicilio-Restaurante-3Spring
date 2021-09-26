@@ -5,7 +5,7 @@ import co.mycompany.Componente.domain.service.EnumErrorCodes;
 /**
  * Error de un Componente
  * 
- * * @author Kevith Felipe Bastidas
+ * * @author Kevith Felipe Bastidas 
  *
  */
 public class ComponenteError {

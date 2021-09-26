@@ -16,5 +16,5 @@ public class ServicioRestauranteApplication {
 		SpringApplication.run(ServicioRestauranteApplication.class, args);
 	
 	}
-
 }
+

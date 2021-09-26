@@ -5,7 +5,6 @@ import co.mycompany.restaurante.cliente.domain.TipoUser;
 import co.mycompany.restaurante.cliente.domain.entity.Componente;
 import co.mycompany.restaurante.cliente.domain.entity.Pedido;
 import co.mycompany.restaurante.cliente.domain.entity.Restaurante;
-import co.mycompany.restaurante.cliente.domain.entity.TipoComponente;
 import static co.mycompany.restaurante.cliente.infra.Messages.warningMessage;
 import co.mycompany.restaurante.cliente.infra.Security;
 import java.awt.image.BufferedImage;
@@ -320,7 +319,7 @@ public class GUIPagMenuPlato extends javax.swing.JInternalFrame {
                 vistaMenuRestaurantes.getVistaPrincipal().agregarComponente(vistaLogin);
                 vistaLogin.show();
             }else{
-                GUIPagPagos vistaPagos = new GUIPagPagos(this.vistaMenuRestaurantes.getVistaPrincipal(), this);
+                GUIPagPagos vistaPagos = new GUIPagPagos(this);
                 this.vistaMenuRestaurantes.getVistaPrincipal().agregarComponente(vistaPagos);
                 vistaPagos.show();
                 //warningMessage("Se genero el pedido....", "Atención");
@@ -350,7 +349,10 @@ public class GUIPagMenuPlato extends javax.swing.JInternalFrame {
             JOptionPane.showMessageDialog(null, "Se genero el pedido con exito.\nSu pedido llegara en un tiempo promedio de acuerdo a su ubicacion", 
                 "Pedido exitoso", JOptionPane.OK_OPTION);
         }
-//        System.out.println(pedido);
+        this.listarDatos();
+        lblCantidad.setText(0 + "");
+        calcularPrecio();
+        System.out.println(pedido);
     }
     
     private List<Componente> obtenerComponentesDelPlato(){
@@ -574,6 +576,10 @@ public class GUIPagMenuPlato extends javax.swing.JInternalFrame {
             }
             return null;
         }
+    }
+    
+    public GUIPrincipal getVistaPrincipal(){
+        return this.vistaMenuRestaurantes.getVistaPrincipal();
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnGenerarPedido;

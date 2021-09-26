@@ -32,6 +32,7 @@ public class GlobalDefaultExceptionHandler {
 		return new ResponseEntity<>("{\"errors\":[{\"code\":\"NOT_FOUND\"}]}", HttpStatus.NOT_FOUND);
 	}
 
+	
 	/**
 	 * Método para manejar la excepcion PlatoDomainException
 	 * 

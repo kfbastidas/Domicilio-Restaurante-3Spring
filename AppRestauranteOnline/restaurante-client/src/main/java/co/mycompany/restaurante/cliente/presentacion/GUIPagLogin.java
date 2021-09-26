@@ -63,6 +63,8 @@ public class GUIPagLogin extends javax.swing.JInternalFrame {
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/usuarioLogin.png"))); // NOI18N
         jLabel1.setText("Usuario");
         jPanel1.add(jLabel1);
+
+        txtUsuario.setText("customer1");
         jPanel1.add(txtUsuario);
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -70,6 +72,8 @@ public class GUIPagLogin extends javax.swing.JInternalFrame {
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/usuarioPassword.png"))); // NOI18N
         jLabel2.setText("Password");
         jPanel1.add(jLabel2);
+
+        txtClave.setText("123456");
         jPanel1.add(txtClave);
 
         jPanel4.add(jPanel1, java.awt.BorderLayout.CENTER);
@@ -131,7 +135,7 @@ public class GUIPagLogin extends javax.swing.JInternalFrame {
             
             if (this.vistaMenuPlato!=null) {
                 
-                GUIPagPagos vistaPagos = new GUIPagPagos(vistaPrincipal, vistaMenuPlato);
+                GUIPagPagos vistaPagos = new GUIPagPagos(vistaMenuPlato);
                 vistaPrincipal.agregarComponente(vistaPagos);
                 vistaPagos.show();
             }

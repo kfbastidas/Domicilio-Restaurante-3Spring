@@ -1,4 +1,5 @@
 package co.mycompany.restaurante.cliente.presentacion;
+import co.mycompany.restaurante.cliente.domain.TipoUser;
 import co.mycompany.restaurante.cliente.domain.services.RestauranteService;
 import co.mycompany.restaurante.cliente.domain.services.UserService;
 import static co.mycompany.restaurante.cliente.infra.Messages.successMessage;
@@ -214,7 +215,13 @@ public class GUIPrincipal extends javax.swing.JFrame {
      */
     private void mnuPedidosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuPedidosActionPerformed
         // TODO add your handling code here:
-        warningMessage("En construcción....", "Atención");
+        if (Security.usuario.getLogin()==TipoUser.ADMINISTRADOR) {
+            GUIPagMenuPedidoAdministrador vistaPedido = new GUIPagMenuPedidoAdministrador(service, this);
+            this.agregarComponente(vistaPedido);
+        }else{
+            GUIPagMenuPedidoUsuario vistaPedido = new GUIPagMenuPedidoUsuario(this);
+            this.agregarComponente(vistaPedido);
+        }
         
     }//GEN-LAST:event_mnuPedidosActionPerformed
     /**
@@ -378,8 +385,12 @@ public class GUIPrincipal extends javax.swing.JFrame {
     public void agregarComponente(Component componente){
         limpiarVista();
         dpDesktop.add(componente);
+        componente.show();
     }
     
+    public javax.swing.JDesktopPane getEscritorio(){
+        return this.dpDesktop;
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDesktopPane dpDesktop;
     private javax.swing.JMenuBar jMenuBar1;

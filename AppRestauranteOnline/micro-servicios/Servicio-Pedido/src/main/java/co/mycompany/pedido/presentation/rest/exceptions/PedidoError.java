@@ -5,7 +5,7 @@ import co.mycompany.pedido.domain.service.EnumErrorCodes;
 /**
  * Error de un plato
  * 
- * * @author Kevith Felipe Bastidas
+ * * @author Kevith Felipe Bastidas 
  *
  */
 public class PedidoError {

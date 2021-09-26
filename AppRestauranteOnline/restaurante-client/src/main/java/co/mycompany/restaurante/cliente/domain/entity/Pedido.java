@@ -127,6 +127,10 @@ public class Pedido implements Serializable {
         this.componentes = componentes;
     }
 
+    public int getTotalPedido(){
+        return this.pe_cantidad*this.pe_precio;
+    }
+    
     @Override
     public String toString() {
         return "Pedido{" + "pe_id=" + pe_id + ", pe_precio=" + pe_precio + ", pe_cantidad=" + pe_cantidad + ", pe_fecha=" + pe_fecha + ", pe_formapago=" + pe_formapago + ", pe_estado=" + pe_estado + ", rest_id=" + rest_id + ", user_id=" + user_id + ", componentes=" + componentes + '}';

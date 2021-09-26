@@ -15,6 +15,7 @@ import java.util.List;
 import javax.imageio.ImageIO;
 import javax.swing.DefaultCellEditor;
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.table.DefaultTableCellRenderer;
@@ -43,18 +44,19 @@ public class GUIPagMenuRestaurante extends javax.swing.JInternalFrame {
      */
     public GUIPagMenuRestaurante(RestauranteService service,GUIPrincipal vistaPrincipal) {
         initComponents();
-        setSize(900, 682);
+        setSize(1366,672);
         tabla.setDefaultRenderer(Object.class, new imgTabla());
         this.service = service;
         listarRegistro();
         this.vistaPrincipal = vistaPrincipal;
+        
     }   
     /**
      * Configuracion de la tabla para ingresar los registros.
      * @return 
      */
     private DefaultTableModel configuracionTablaMenuRestaurante(){
-        boolean[] editable = {false,false,false,true};
+        boolean[] editable = {false,false,false,true,false};
         DefaultTableModel tablaMenuRestuarante = new DefaultTableModel(){
             @Override
             public boolean isCellEditable(int row, int column){
@@ -90,12 +92,16 @@ public class GUIPagMenuRestaurante extends javax.swing.JInternalFrame {
         tablaRegistroRestaurantes.addColumn("<html><b><span style='font-size:16px'>Restaurantes</span></b></html>");
         tablaRegistroRestaurantes.addColumn("<html><b><span style='font-size:16px'>Informacion</span></b></html>");
         tablaRegistroRestaurantes.addColumn("<html><b><span style='font-size:16px'>Ciudad</span></b></html>");
-        
+      
         if (!Security.usuario.getLogin().name().equals("ADMINISTRADOR")) {
             tablaRegistroRestaurantes.addColumn("<html><b><span style='font-size:16px'>Seleccione Dia</span></b></html>");
-            
         }
+        tablaRegistroRestaurantes.addColumn("<html><b><span style='font-size:16px'></span></b></html>");
         Object fila[] = new Object[tablaRegistroRestaurantes.getColumnCount()];
+        
+        tabla.setDefaultRenderer(Object.class, new imgTabla());
+            
+        
         for (Restaurante restaurante : restaurantes) {
             fila[0] = new JLabel(getImageIcon(restaurante.getFoto(), 170, 70));
             String mensaje = "<html><b>NOMBRE: " + restaurante.getNombre() + "</b><br/>";
@@ -106,6 +112,12 @@ public class GUIPagMenuRestaurante extends javax.swing.JInternalFrame {
             
             if (!Security.usuario.getLogin().name().equals("ADMINISTRADOR")) {
                 fila[3] = "LUNES";
+                JButton btnDetalles=new JButton("Seleccionar Almuerzo Ejecutivo.");
+                fila[4] = btnDetalles;
+                
+            }else{
+                JButton btnDetalles=new JButton("Configurar Almuerzo Ejecutivo.");
+                fila[3] = btnDetalles;
             }
             tablaRegistroRestaurantes.addRow(fila);
         }
@@ -127,12 +139,14 @@ public class GUIPagMenuRestaurante extends javax.swing.JInternalFrame {
             tabla.getColumnModel().getColumn(3).setCellRenderer(renderer);
             
             tabla.getColumnModel().getColumn(3).setPreferredWidth(300);
+            tabla.getColumnModel().getColumn(4).setPreferredWidth(300);
         }
         
         tabla.setRowHeight(70);
-        tabla.getColumnModel().getColumn(0).setPreferredWidth(220);
-        tabla.getColumnModel().getColumn(1).setPreferredWidth(350);
-        tabla.getColumnModel().getColumn(2).setPreferredWidth(250);
+        tabla.getColumnModel().getColumn(0).setPreferredWidth(140);
+        tabla.getColumnModel().getColumn(1).setPreferredWidth(150);
+        tabla.getColumnModel().getColumn(2).setPreferredWidth(150);
+        
     }   
     /**
      * get un vector byte[] de una ruta especificada
@@ -184,8 +198,7 @@ public class GUIPagMenuRestaurante extends javax.swing.JInternalFrame {
         setMaximizable(true);
         setResizable(true);
         setTitle("MenuRestaurante");
-        setLayer(6);
-        getContentPane().setLayout(new java.awt.GridLayout(1, 0));
+        setPreferredSize(new java.awt.Dimension(1044, 608));
 
         tabla.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -205,9 +218,7 @@ public class GUIPagMenuRestaurante extends javax.swing.JInternalFrame {
         });
         jScrollPane1.setViewportView(tabla);
 
-        getContentPane().add(jScrollPane1);
-
-        getAccessibleContext().setAccessibleParent(jScrollPane1);
+        getContentPane().add(jScrollPane1, java.awt.BorderLayout.CENTER);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -220,19 +231,28 @@ public class GUIPagMenuRestaurante extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
         int row = tabla.getSelectedRow();
         
+        int columna=tabla.getColumnModel().getColumnIndexAtX(evt.getX()); 
+        
         if (Security.usuario.getLogin().name().equals("ADMINISTRADOR")) {
-            Restaurante restaurante = restaurantes.get(row);
-            GUIPagAgregarPlato vistaAgregarPlato = new GUIPagAgregarPlato(restaurante, service,this);
-            vistaPrincipal.agregarComponente(vistaAgregarPlato);
-            vistaAgregarPlato.show();
-        }else{
-            Restaurante restaurante = restaurantes.get(row);
-            restaurante.setMenuSemanal(service.getMenuComponentes(restaurante.getId(), DiaSemana.valueOf(tabla.getValueAt(row,3).toString())));
-            DiaSemana dia = DiaSemana.valueOf(tabla.getValueAt(row,3).toString());
-            restaurante.setPlato(service.getPlato(restaurante.getId(),dia));
-            GUIPagMenuPlato vistaMenuPlato = new GUIPagMenuPlato(restaurante,this,null);
-            vistaPrincipal.agregarComponente(vistaMenuPlato);
-            vistaMenuPlato.show();
+
+            if (columna == 3) {
+                Restaurante restaurante = restaurantes.get(row);
+                GUIPagAgregarPlato vistaAgregarPlato = new GUIPagAgregarPlato(restaurante, service, this);
+                vistaPrincipal.agregarComponente(vistaAgregarPlato);
+                vistaAgregarPlato.show();
+            }
+
+        } else {
+            if (columna == 4) {
+                Restaurante restaurante = restaurantes.get(row);
+                restaurante.setMenuSemanal(service.getMenuComponentes(restaurante.getId(), DiaSemana.valueOf(tabla.getValueAt(row, 3).toString())));
+                DiaSemana dia = DiaSemana.valueOf(tabla.getValueAt(row, 3).toString());
+                restaurante.setPlato(service.getPlato(restaurante.getId(), dia));
+                GUIPagMenuPlato vistaMenuPlato = new GUIPagMenuPlato(restaurante, this, null);
+                vistaPrincipal.agregarComponente(vistaMenuPlato);
+                vistaMenuPlato.show();
+            }
+
         }
     }//GEN-LAST:event_tablaMouseClicked
     /**
@@ -242,6 +262,8 @@ public class GUIPagMenuRestaurante extends javax.swing.JInternalFrame {
     public GUIPrincipal getVistaPrincipal(){
         return this.vistaPrincipal;
     }
+    
+    
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JScrollPane jScrollPane1;
