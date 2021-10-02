@@ -57,7 +57,6 @@ co\mycompany\restaurante\cliente\presentacion\GUIPagLogin$1.class
 co\mycompany\restaurante\cliente\sistemadepago\GUIPagBancoPSE.class
 co\mycompany\restaurante\cliente\presentacion\GUIPrincipal$11.class
 co\mycompany\restaurante\cliente\presentacion\GUIPagAgregarPlato$15.class
-co\mycompany\restaurante\cliente\access\adapter\IRestauranteAccessJsonJersey.class
 co\mycompany\restaurante\cliente\presentacion\GUIPagMenuPedidoUsuario$2.class
 co\mycompany\restaurante\cliente\domain\services\RestauranteService.class
 co\mycompany\restaurante\cliente\infra\ClientServiceRestComp.class
@@ -87,7 +86,7 @@ co\mycompany\restaurante\cliente\domain\entity\TipoComponente.class
 co\mycompany\restaurante\cliente\infra\ClientServiceRestaurante$1.class
 co\mycompany\restaurante\cliente\infra\ClientServiceRestaurante$2.class
 co\mycompany\restaurante\cliente\presentacion\GUIPagAgregarPlato$13.class
-co\mycompany\restaurante\cliente\access\adapter\RestauranteAccessImplJsonJersey.class
+co\mycompany\restaurante\cliente\presentacion\GUIPrincipal$14.class
 co\mycompany\restaurante\cliente\infra\RestComponente.class
 co\mycompany\restaurante\cliente\presentacion\GUIPagMenuRestaurante$2.class
 co\mycompany\restaurante\cliente\presentacion\GUIPagAgregarPlato$5.class

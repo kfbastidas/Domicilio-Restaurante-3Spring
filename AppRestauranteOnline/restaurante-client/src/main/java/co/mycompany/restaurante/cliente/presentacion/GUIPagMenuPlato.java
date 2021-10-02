@@ -42,7 +42,7 @@ public class GUIPagMenuPlato extends javax.swing.JInternalFrame {
      */
     public GUIPagMenuPlato(Restaurante restaurante,GUIPagMenuRestaurante vistaMenuRestaurantes,GUIPagAgregarPlato vistaAgregarPlato) {       
         initComponents();
-        setSize(902,450);
+        setSize(1366,672);
         this.restaurante = restaurante;
         this.vistaMenuRestaurantes = vistaMenuRestaurantes;
         this.vistaAgregarPlato = vistaAgregarPlato;
@@ -507,9 +507,10 @@ public class GUIPagMenuPlato extends javax.swing.JInternalFrame {
                     + "" + restaurante.getTelefono() + "</html>");
         }
         lblImagen.setText("");
-        lblImagen.setIcon(getImageIcon(getImagen(restaurante.getPlato().getUrl_imagen()), 300, 300));
+        int ancho = 420;
+        lblImagen.setIcon(getImageIcon(getImagen(restaurante.getPlato().getUrl_imagen()), ancho, ancho));
         
-        lblImagen.setSize(300, 300);
+        lblImagen.setSize(ancho, ancho);
         
         lblDescripcion.setText(restaurante.getPlato().getDescripcion());
         //ENTRADA

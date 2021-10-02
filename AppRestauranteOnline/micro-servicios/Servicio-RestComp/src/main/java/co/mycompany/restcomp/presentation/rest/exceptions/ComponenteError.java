@@ -25,6 +25,6 @@ public class ComponenteError {
 	public ComponenteError(EnumErrorCodes code, String field, String description) {
 		this.code = code;
 		this.field = field;
-		this.description = description;
+		this.description = description; 
 	}
 }

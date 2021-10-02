@@ -70,7 +70,7 @@ public class GUIPagAgregarPlato extends javax.swing.JInternalFrame {
      */
     public GUIPagAgregarPlato(Restaurante restaurante,RestauranteService service,GUIPagMenuRestaurante vistaMenuRestaurantes) {
         initComponents();
-        setSize(1112, 682);
+        setSize(1366,672);
         this.service = service;
         this.restaurante = restaurante;
         this.vistaMenuRestaurantes = vistaMenuRestaurantes;

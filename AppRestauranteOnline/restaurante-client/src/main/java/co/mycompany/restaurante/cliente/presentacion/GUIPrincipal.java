@@ -58,6 +58,7 @@ public class GUIPrincipal extends javax.swing.JFrame {
         mnuIniciarSecion = new javax.swing.JMenu();
         mnuAyuda = new javax.swing.JMenu();
         mnuAcercaDe = new javax.swing.JMenuItem();
+        mnuComoSeUsaLaApp = new javax.swing.JMenuItem();
         mnuSalir = new javax.swing.JMenu();
         mnuUsuarioLogueado = new javax.swing.JMenu();
 
@@ -178,6 +179,15 @@ public class GUIPrincipal extends javax.swing.JFrame {
         });
         mnuAyuda.add(mnuAcercaDe);
 
+        mnuComoSeUsaLaApp.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        mnuComoSeUsaLaApp.setText("Como Se Usa");
+        mnuComoSeUsaLaApp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuComoSeUsaLaAppActionPerformed(evt);
+            }
+        });
+        mnuAyuda.add(mnuComoSeUsaLaApp);
+
         jMenuBar1.add(mnuAyuda);
 
         mnuSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/recibo-salida.png"))); // NOI18N
@@ -294,6 +304,11 @@ public class GUIPrincipal extends javax.swing.JFrame {
         controlarSeccion();
         limpiarVista();
     }//GEN-LAST:event_mnuCerrarSeccionActionPerformed
+
+    private void mnuComoSeUsaLaAppActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuComoSeUsaLaAppActionPerformed
+        // TODO add your handling code here:
+        warningMessage("Video Intrucciones.\nhttps://youtu.be/wa7IrKJa7qM", "INFORMACION");
+    }//GEN-LAST:event_mnuComoSeUsaLaAppActionPerformed
     /**
      * Main principal
      * @param args the command line arguments
@@ -400,6 +415,7 @@ public class GUIPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem mnuAgregarComponentes;
     private javax.swing.JMenu mnuAyuda;
     private javax.swing.JMenuItem mnuCerrarSeccion;
+    private javax.swing.JMenuItem mnuComoSeUsaLaApp;
     private javax.swing.JMenuItem mnuConfiguracionCuenta;
     private javax.swing.JMenuItem mnuConsultaAbierta;
     private javax.swing.JMenu mnuInformes;

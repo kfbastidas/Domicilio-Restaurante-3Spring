@@ -12,7 +12,6 @@ C:\Users\kevit\Documents\GitHub\Domicilio-Restaurante-3Spring\AppRestauranteOnli
 C:\Users\kevit\Documents\GitHub\Domicilio-Restaurante-3Spring\AppRestauranteOnline\restaurante-client\src\main\java\co\mycompany\restaurante\cliente\infra\imgTabla.java
 C:\Users\kevit\Documents\GitHub\Domicilio-Restaurante-3Spring\AppRestauranteOnline\restaurante-client\src\main\java\co\mycompany\restaurante\cliente\infra\ClientServiceUsuario.java
 C:\Users\kevit\Documents\GitHub\Domicilio-Restaurante-3Spring\AppRestauranteOnline\restaurante-client\src\main\java\co\mycompany\restaurante\cliente\domain\entity\Restaurante.java
-C:\Users\kevit\Documents\GitHub\Domicilio-Restaurante-3Spring\AppRestauranteOnline\restaurante-client\src\main\java\co\mycompany\restaurante\cliente\access\adapter\IRestauranteAccessJsonJersey.java
 C:\Users\kevit\Documents\GitHub\Domicilio-Restaurante-3Spring\AppRestauranteOnline\restaurante-client\src\main\java\co\mycompany\restaurante\cliente\presentacion\GUIPagMenuPlato.java
 C:\Users\kevit\Documents\GitHub\Domicilio-Restaurante-3Spring\AppRestauranteOnline\restaurante-client\src\main\java\co\mycompany\restaurante\cliente\domain\entity\Pedido.java
 C:\Users\kevit\Documents\GitHub\Domicilio-Restaurante-3Spring\AppRestauranteOnline\restaurante-client\src\main\java\co\mycompany\restaurante\cliente\presentacion\GUIPagMenuRestaurante.java
@@ -20,7 +19,6 @@ C:\Users\kevit\Documents\GitHub\Domicilio-Restaurante-3Spring\AppRestauranteOnli
 C:\Users\kevit\Documents\GitHub\Domicilio-Restaurante-3Spring\AppRestauranteOnline\restaurante-client\src\main\java\co\mycompany\restaurante\cliente\presentacion\GUIPrincipal.java
 C:\Users\kevit\Documents\GitHub\Domicilio-Restaurante-3Spring\AppRestauranteOnline\restaurante-client\src\main\java\co\mycompany\restaurante\cliente\infra\ClientServiceRestComp.java
 C:\Users\kevit\Documents\GitHub\Domicilio-Restaurante-3Spring\AppRestauranteOnline\restaurante-client\src\main\java\co\mycompany\restaurante\cliente\presentacion\GUIPagAgregarPlato.java
-C:\Users\kevit\Documents\GitHub\Domicilio-Restaurante-3Spring\AppRestauranteOnline\restaurante-client\src\main\java\co\mycompany\restaurante\cliente\access\adapter\RestauranteAccessImplJsonJersey.java
 C:\Users\kevit\Documents\GitHub\Domicilio-Restaurante-3Spring\AppRestauranteOnline\restaurante-client\src\main\java\co\mycompany\restaurante\cliente\sistemadepago\GUIPagTarjetaCredito.java
 C:\Users\kevit\Documents\GitHub\Domicilio-Restaurante-3Spring\AppRestauranteOnline\restaurante-client\src\main\java\co\mycompany\restaurante\cliente\infra\Messages.java
 C:\Users\kevit\Documents\GitHub\Domicilio-Restaurante-3Spring\AppRestauranteOnline\restaurante-client\src\main\java\co\mycompany\restaurante\cliente\access\Factory.java
