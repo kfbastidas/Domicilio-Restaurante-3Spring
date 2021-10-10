@@ -1,0 +1,47 @@
+version: '2'
+
+networks:
+    networkX:
+        
+services:
+    service-componente:
+        build: ./servicio-componente
+        ports:
+            - 8001:8001
+        networks:
+            - networkX
+            
+    service-restaurante:
+        build: ./servicio-restaurante
+        ports:
+            - 8002:8002
+        networks:
+            - networkX
+            
+    service-restcomponente:
+        build: ./servicio-restcomponente
+        ports:
+            - 8003:8003
+        networks:
+            - networkX
+            
+    service-plato:
+        build: ./servicio-plato
+        ports:
+            - 8004:8004
+        networks:
+            - networkX
+            
+    service-usuario:
+        build: ./servicio-usuario
+        ports:
+            - 8005:8005
+        networks:
+            - networkX
+            
+    service-pedido:
+        build: ./servicio-pedido
+        ports:
+            - 8007:8007
+        networks:
+            - networkX

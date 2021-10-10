@@ -1,0 +1,26 @@
+1) ./mvnw clean package :> crea el .jar de la carpeta y lo ubica en la carpeta target/...
+
+2) Se crea un archivo Dockerfile.txt con la siguiente informacion
+	FROM openjdk:14
+	ADD ./target/Product-Service-1.jar product-service.jar
+	EXPOSE 8001
+	ENTRYPOINT ["java", "-jar", "product-service.jar"]
+
+3) docker build -t product-service -f Dockerfile.txt . :> crea la imagen
+
+4) docker images  :> muestra las imagenes del docker creadas.
+
+5) docker network create mired :> crea la red con un nombre especifico donde se va alojar la imagen en un docker
+					todos los microservicios deben estar en la misma red para que esten comunicados.
+
+6) docker run -p 8001:8001 --name product-service-server --network mired product-service :> lo ejecuta en un contenedor
+
+7) docker container start product-service-server   :> inicia el servicio del contenedor
+
+8) docker container stop product-service-server  	:> termina la ejecucion del servicio del contenerdor
+
+**************Falta orquestar los micro-servicios
+
+9) docker-compose up 
+
+10) docker-compose down
