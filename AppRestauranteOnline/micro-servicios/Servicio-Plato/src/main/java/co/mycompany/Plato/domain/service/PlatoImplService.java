@@ -31,7 +31,7 @@ public class PlatoImplService implements IPlatoService {
 	 * Busca un plato por su Id en caso de no existir el plato en un dia determinado
 	 * se creara el plato
 	 * 
-	 * @param id identificador del plato
+	 * @param id identificador del plato 
 	 * @return objeto de tipo plato
 	 */
 	@Override // Para que esté sincronizada con la bd

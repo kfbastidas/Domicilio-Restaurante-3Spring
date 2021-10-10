@@ -113,9 +113,9 @@ public class RestauranteAccessImplJersey implements IRestauranteAccess{
     @Override
     public ArrayList<Componente> getMenuComponentes(int idRestaurante, DiaSemana dia) {
         ArrayList<Componente> componentes = new ArrayList<>();
-        List<Componente> componentes2 = this.clientRestComp.getMenuComponentes(idRestaurante,dia);
-        for (Componente componente : componentes2) {
-            componentes.add(componente);
+        List<Integer> Idcomponentes = this.clientRestComp.getMenuComponentes(idRestaurante,dia);    
+        for (int comp_id : Idcomponentes) {
+            componentes.add(getComponente(comp_id));
         }
         return componentes;
     }

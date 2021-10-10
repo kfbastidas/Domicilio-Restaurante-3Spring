@@ -1,5 +1,5 @@
 package co.mycompany.restaurante.cliente.presentacion;
-import co.mycompany.restaurante.cliente.domain.services.RestauranteService;
+import co.mycompany.restaurante.cliente.infra.services.RestauranteService;
 import static co.mycompany.restaurante.cliente.infra.Messages.successMessage;
 import co.mycompany.restaurante.cliente.domain.entity.Componente;
 import co.mycompany.restaurante.cliente.domain.entity.TipoComponente;

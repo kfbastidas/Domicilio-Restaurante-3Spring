@@ -1,6 +1,6 @@
 package co.mycompany.restaurante.cliente.presentacion;
 import co.mycompany.restaurante.cliente.domain.TipoUser;
-import co.mycompany.restaurante.cliente.domain.services.UserService;
+import co.mycompany.restaurante.cliente.infra.services.UserService;
 import static co.mycompany.restaurante.cliente.infra.Messages.successMessage;
 import co.mycompany.restaurante.cliente.infra.Security;
 /**

@@ -35,7 +35,7 @@ public class GlobalDefaultExceptionHandler {
 
 	
 	/**
-	 * Método para manejar la excepcion ProductDomainException
+	 * Método para manejar la excepcion ProductDomainException 
 	 * 
 	 * @param e ProductDomainException
 	 * @return la excepción en formato Json

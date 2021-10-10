@@ -1,18 +1,12 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package co.mycompany.restaurante.cliente.presentacion;
 
-import co.mycompany.restaurante.cliente.access.Factory;
-import co.mycompany.restaurante.cliente.access.IRestauranteAccess;
 import co.mycompany.restaurante.cliente.domain.entity.Componente;
 import co.mycompany.restaurante.cliente.domain.entity.Pedido;
 import co.mycompany.restaurante.cliente.domain.entity.Restaurante;
 import co.mycompany.restaurante.cliente.domain.entity.Usuario;
 import static co.mycompany.restaurante.cliente.infra.Messages.warningMessage;
 import co.mycompany.restaurante.cliente.infra.Security;
+import co.mycompany.restaurante.cliente.infra.services.RestauranteService;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
 
@@ -21,20 +15,19 @@ import javax.swing.table.DefaultTableModel;
  * @author Kevith Felipe Bastidas
  */
 public class GUIPagMenuPedidoUsuario extends javax.swing.JInternalFrame {
-
     /**
-     * Instacia de la vistaPrincipal
+     * instacia la clase RestauranteService para poder acceder asus servicios
      */
-    private final GUIPrincipal vistaPrincipal;
+    private final RestauranteService service;
     /**
      * Creates new form GUIPagMenuPedidoUsuario
+     * @param service
      * @param vistaPrincipal
      */
-    public GUIPagMenuPedidoUsuario(GUIPrincipal vistaPrincipal) {
+    public GUIPagMenuPedidoUsuario(RestauranteService service) {
         initComponents();
-        this.vistaPrincipal = vistaPrincipal;
-        System.out.println(vistaPrincipal.getEscritorio().getWidth()+","+vistaPrincipal.getEscritorio().getHeight());
-        this.setSize(vistaPrincipal.getEscritorio().getWidth(), vistaPrincipal.getEscritorio().getHeight());
+        setSize(1366,672);
+        this.service = service;
         listarRegistro();
     }
     /**
@@ -51,6 +44,9 @@ public class GUIPagMenuPedidoUsuario extends javax.swing.JInternalFrame {
         };
         return tablaMenuRestuarante;
     } 
+    /**
+     * lista toda la informacion de los pedidos del usuario
+     */
     private void listarRegistro(){
         DefaultTableModel tablaRegistroPedidos = configuracionTablaMenuRestaurante();
         tablaRegistroPedidos.addColumn("<html><b><span style='font-size:16px'>Codigo</span></b></html>");
@@ -62,9 +58,8 @@ public class GUIPagMenuPedidoUsuario extends javax.swing.JInternalFrame {
         tablaRegistroPedidos.addColumn("<html><b><span style='font-size:16px'>Medio De Pago</span></b></html>");
         tablaRegistroPedidos.addColumn("<html><b><span style='font-size:16px'>Fecha</span></b></html>");
         Object fila[] = new Object[tablaRegistroPedidos.getColumnCount()];
-        IRestauranteAccess repo = Factory.getInstance().getRestauranteService();
         
-        List<Pedido> pedidos = repo.getPedidos(Security.usuario.getUser());
+        List<Pedido> pedidos = service.getPedidos(Security.usuario.getUser());
         
         for (Pedido pedido : pedidos) {
             fila[0] = pedido.getPe_id();
@@ -74,12 +69,12 @@ public class GUIPagMenuPedidoUsuario extends javax.swing.JInternalFrame {
                 mensaje += "<b>" + componente.getTipo()+"</b>: "+componente.getNombre()+"<br/>";
             }
             fila[1] = mensaje + "</html>";
-            Restaurante restaurante = repo.getRestaurante(pedido.getRest_id());
+            Restaurante restaurante = service.getRestaurante(pedido.getRest_id());
             mensaje = "<html><b>Nombre: </b>"+restaurante.getNombre()+"<br/><br/>";
             mensaje += "<b>Direccion: </b>"+restaurante.getDireccion()+"<br/>";
             fila[2] = pedido.getPe_cantidad();
             fila[3] = mensaje+ "</html>";
-            Usuario usuario = repo.getUsuario(pedido.getUser_id());
+            Usuario usuario = service.getUsuario(pedido.getUser_id());
             fila[4] = usuario.getDireccion();
             fila[5] = pedido.getTotalPedido();
             fila[6] = pedido.getPe_formapago();
@@ -93,8 +88,7 @@ public class GUIPagMenuPedidoUsuario extends javax.swing.JInternalFrame {
         tablaPedido.getColumnModel().getColumn(0).setPreferredWidth(10);
         tablaPedido.getColumnModel().getColumn(1).setPreferredWidth(150);
         
-    }
-    
+    }   
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -225,7 +219,10 @@ public class GUIPagMenuPedidoUsuario extends javax.swing.JInternalFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    /**
+     * btn Ayuda lo direcciona a una pagina donde un asesor lo atendera
+     * @param evt 
+     */
     private void BtnAyudaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAyudaActionPerformed
         // TODO add your handling code here:
         warningMessage("En construcción....", "Atención");

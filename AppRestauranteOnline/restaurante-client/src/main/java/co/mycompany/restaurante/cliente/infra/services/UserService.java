@@ -1,4 +1,4 @@
-package co.mycompany.restaurante.cliente.domain.services;
+package co.mycompany.restaurante.cliente.infra.services;
 import co.mycompany.restaurante.cliente.access.Factory;
 import co.mycompany.restaurante.cliente.domain.TipoUser;
 import co.mycompany.restaurante.cliente.domain.User;

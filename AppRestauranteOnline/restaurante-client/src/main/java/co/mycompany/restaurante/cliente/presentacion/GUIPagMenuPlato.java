@@ -330,8 +330,6 @@ public class GUIPagMenuPlato extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btnGenerarPedidoActionPerformed
     
     public void generarPedido(String metodoDePago){
-        
-        
         IRestauranteAccess repo = Factory.getInstance().getRestauranteService();
         Pedido pedido = new Pedido();
         pedido.setUser_id(Security.usuario.getUser());

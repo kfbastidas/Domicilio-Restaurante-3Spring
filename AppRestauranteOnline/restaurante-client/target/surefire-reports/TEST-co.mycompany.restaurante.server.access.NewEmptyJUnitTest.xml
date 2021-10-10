@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="3" failures="0" name="co.mycompany.restaurante.server.access.NewEmptyJUnitTest" time="2.314" errors="0" skipped="0">
+<testsuite tests="3" failures="0" name="co.mycompany.restaurante.server.access.NewEmptyJUnitTest" time="12.465" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="java.vm.version" value="13.0.2+8"/>
@@ -29,7 +29,7 @@
     <property name="maven.ext.class.path" value="C:\Program Files\NetBeans-12.0\netbeans\java\maven-nblib\netbeans-eventspy.jar"/>
     <property name="classworlds.conf" value="C:\Program Files\NetBeans-12.0\netbeans\java\maven\bin\..\bin\m2.conf"/>
     <property name="sun.jnu.encoding" value="Cp1252"/>
-    <property name="java.library.path" value="C:\Program Files\Java\jdk-13.0.2\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\Common Files\Oracle\Java\javapath;C:\oraclexe\app\oracle\product\11.2.0\server\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\msys32\mingw32\bin;C:\msys32\usr\bin;C:\qemu;C:\bochs\bin;C:\cross-gcc\bin;C:\Program Files (x86)\cdrtools;C:\Users\kevit\AppData\Local\Microsoft\WindowsApps;C:\Users\kevit\AppData\Local\GitHubDesktop\bin;C:\Program Files\JetBrains\PyCharm Community Edition 2020.3.3\bin;;C:\So\msys32\mingw32\bin;C:\So\msys32\usr\bin;C:\So\qemu;C:\So\bochs\bin;C:\So\cross-gcc\bin;C:\Program Files\doxygen\bin;C:\Program Files (x86)\cdrtools;C:\Program Files\gnuplot\bin;C:\Program Files\RabbitMQ Server\rabbitmq_server-3.8.14\sbin;C:\Program Files\MySQL\MySQL Server 8.0\bin;C:\Program Files\PostgreSQL\10\pgAdmin 4\python\python.exe;;C:\Users\kevit\AppData\Local\Programs\Microsoft VS Code\bin;."/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk-13.0.2\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\Common Files\Oracle\Java\javapath;C:\oraclexe\app\oracle\product\11.2.0\server\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\msys32\mingw32\bin;C:\msys32\usr\bin;C:\qemu;C:\bochs\bin;C:\cross-gcc\bin;C:\Program Files (x86)\cdrtools;;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;C:\Users\kevit\AppData\Local\Microsoft\WindowsApps;C:\Users\kevit\AppData\Local\GitHubDesktop\bin;C:\Program Files\JetBrains\PyCharm Community Edition 2020.3.3\bin;;C:\So\msys32\mingw32\bin;C:\So\msys32\usr\bin;C:\So\qemu;C:\So\bochs\bin;C:\So\cross-gcc\bin;C:\Program Files\doxygen\bin;C:\Program Files (x86)\cdrtools;C:\Program Files\gnuplot\bin;C:\Program Files\RabbitMQ Server\rabbitmq_server-3.8.14\sbin;C:\Program Files\MySQL\MySQL Server 8.0\bin;C:\Program Files\PostgreSQL\10\pgAdmin 4\python\python.exe;;C:\Users\kevit\AppData\Local\Programs\Microsoft VS Code\bin;."/>
     <property name="maven.conf" value="C:\Program Files\NetBeans-12.0\netbeans\java\maven\bin\../conf"/>
     <property name="jdk.debug" value="release"/>
     <property name="java.class.version" value="57.0"/>
@@ -60,7 +60,7 @@
     <property name="sun.cpu.endian" value="little"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="co.mycompany.restaurante.server.access.NewEmptyJUnitTest" name="testGetPedidos" time="1.737"/>
-  <testcase classname="co.mycompany.restaurante.server.access.NewEmptyJUnitTest" name="testUpdatePedido" time="0.484"/>
-  <testcase classname="co.mycompany.restaurante.server.access.NewEmptyJUnitTest" name="testAddPedido" time="0.093"/>
+  <testcase classname="co.mycompany.restaurante.server.access.NewEmptyJUnitTest" name="testGetPedidos" time="9.679"/>
+  <testcase classname="co.mycompany.restaurante.server.access.NewEmptyJUnitTest" name="testUpdatePedido" time="2.605"/>
+  <testcase classname="co.mycompany.restaurante.server.access.NewEmptyJUnitTest" name="testAddPedido" time="0.181"/>
 </testsuite>

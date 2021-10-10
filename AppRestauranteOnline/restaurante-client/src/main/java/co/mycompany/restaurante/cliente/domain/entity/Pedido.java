@@ -42,9 +42,6 @@ public class Pedido implements Serializable {
         this.user_id = user_id;
     }
 
-    
-
-    
     //gets and sets
 
     public String getPe_plato() {

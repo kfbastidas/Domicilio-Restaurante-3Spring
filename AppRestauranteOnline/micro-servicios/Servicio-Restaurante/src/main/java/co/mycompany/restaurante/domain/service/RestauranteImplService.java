@@ -27,7 +27,7 @@ public class RestauranteImplService implements IRestauranteService{
 	private IRestauranteDao restauranteDao;
 
 	/**
-	 * Servicio para buscar todos los restaurantes 
+	 * Servicio para buscar todos los restaurantes
 	 *  
 	 * @return Listado de restaurantes
 	 */

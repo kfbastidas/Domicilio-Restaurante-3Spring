@@ -21,9 +21,13 @@ import javax.ws.rs.core.MediaType;
  * @author kevith felipe bastidas
  */
 public class ClientServicePedido {
+    //Atributos
     private WebTarget webTarget;
     private Client client;
     private static final String BASE_URI = Utilities.loadProperty("base.uriPedido");
+    /**
+     * Constructor por defecto
+     */
     public ClientServicePedido() {
     }
     
@@ -60,15 +64,6 @@ public class ClientServicePedido {
         close();
         return jsonToPedidos(pedidos);
     }
-//    public <T> List<Pedido> findAllPedidos(int idRestaurante,int estado) throws javax.ws.rs.ClientErrorException {
-//        initPedido();
-//        GenericType<List<Pedido>> listResponseType = new GenericType<List<Pedido>>(){};
-//        String formato = java.text.MessageFormat.format("{0}/{1}", idRestaurante,estado);
-//        webTarget = webTarget.path(formato);
-//        List<Pedido> componentes = webTarget.request(MediaType.APPLICATION_JSON).get(listResponseType);
-//        close();
-//        return componentes;
-//    } 
     public String addPedido(Pedido requestEntity) throws ClientErrorException {
         requestEntity.setPe_plato(convertToJson(requestEntity.getComponentes()));
         initPedido();
@@ -159,9 +154,7 @@ public class ClientServicePedido {
             
         }
         return listaConvertida;
-    }
-    
-    
+    }   
      /**
      * Función que convierte un objeto a un formato json 
      * @param food objeto

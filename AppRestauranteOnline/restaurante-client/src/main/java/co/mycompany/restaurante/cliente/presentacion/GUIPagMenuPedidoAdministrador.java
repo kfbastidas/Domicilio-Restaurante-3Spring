@@ -1,16 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package co.mycompany.restaurante.cliente.presentacion;
-import co.mycompany.restaurante.cliente.access.Factory;
-import co.mycompany.restaurante.cliente.access.IRestauranteAccess;
 import co.mycompany.restaurante.cliente.domain.entity.Componente;
 import co.mycompany.restaurante.cliente.domain.entity.Pedido;
+import co.mycompany.restaurante.cliente.domain.entity.Restaurante;
 import co.mycompany.restaurante.cliente.domain.entity.Usuario;
-import co.mycompany.restaurante.cliente.domain.services.RestauranteService;
+import co.mycompany.restaurante.cliente.infra.services.RestauranteService;
 import static co.mycompany.restaurante.cliente.infra.Messages.successMessage;
+import co.mycompany.restaurante.cliente.infra.Security;
 import co.mycompany.restaurante.cliente.infra.imgTabla;
 import java.util.List;
 import javax.swing.JButton;
@@ -22,24 +17,21 @@ import javax.swing.table.DefaultTableModel;
  */
 public class GUIPagMenuPedidoAdministrador extends javax.swing.JInternalFrame {
     /**
-     * Instacia de la vistaPrincipal
-     */
-    private final GUIPrincipal vistaPrincipal;
-    /**
      * instacia la clase RestauranteService para poder acceder asus servicios
      */
-    private final RestauranteService service;
+    private final RestauranteService service; 
     /**
      * Creates new form GUIPagMenuPedidoAdministrador
      * @param service
+     * @param restaurante
      * @param vistaPrincipal
      */
-    public GUIPagMenuPedidoAdministrador(RestauranteService service,GUIPrincipal vistaPrincipal) {
+    public GUIPagMenuPedidoAdministrador(RestauranteService service) {
         initComponents();
+        setSize(1366,672);
         this.service = service;
+        obtenerRestaurantescbx();
         listarRegistro();
-        this.vistaPrincipal = vistaPrincipal;
-        this.setSize(vistaPrincipal.getEscritorio().getWidth(), vistaPrincipal.getEscritorio().getHeight());
     }
 
     /**
@@ -57,6 +49,17 @@ public class GUIPagMenuPedidoAdministrador extends javax.swing.JInternalFrame {
         return tablaMenuRestuarante;
     } 
     
+    private void obtenerRestaurantescbx(){
+        List<Restaurante> restaurantes = service.getRestaurantes(Security.usuario.getUser());
+        cbxRestaurante.removeAllItems();
+        for (Restaurante restaurante : restaurantes) {
+            cbxRestaurante.addItem(restaurante+"");
+        }
+    }
+    
+    /**
+     * Lista todos los pedidos que tiene el administrador en un restaurante determinado
+     */
     private void listarRegistro(){
         DefaultTableModel tablaRegistroPedidos = configuracionTablaMenuRestaurante();
         tablaRegistroPedidos.addColumn("<html><b><span style='font-size:16px'>Codigo</span></b></html>");
@@ -72,9 +75,7 @@ public class GUIPagMenuPedidoAdministrador extends javax.swing.JInternalFrame {
         
         
         Object fila[] = new Object[tablaRegistroPedidos.getColumnCount()];
-        IRestauranteAccess repo = Factory.getInstance().getRestauranteService();
-        
-        List<Pedido> pedidos = repo.getPedidos(1, cbxMostrarPedido.getSelectedIndex());
+        List<Pedido> pedidos = service.getPedidos(cbxRestaurante.getSelectedIndex(), cbxMostrarPedido.getSelectedIndex());
         if (cbxMostrarPedido.getSelectedIndex()==0) {
             
             tablaPedido.setDefaultRenderer(Object.class, new imgTabla());
@@ -92,7 +93,7 @@ public class GUIPagMenuPedidoAdministrador extends javax.swing.JInternalFrame {
             fila[1] = mensaje + "</html>";
             fila[2] = pedido.getPe_cantidad();
             fila[3] = pedido.getPe_fecha();
-            Usuario usuario = repo.getUsuario(pedido.getUser_id());
+            Usuario usuario = service.getUsuario(pedido.getUser_id());
             fila[4] = usuario.getDireccion();
             fila[5] = pedido.getTotalPedido();
             fila[6] = pedido.getPe_formapago();
@@ -132,6 +133,8 @@ public class GUIPagMenuPedidoAdministrador extends javax.swing.JInternalFrame {
         jButton3 = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
         cbxMostrarPedido = new javax.swing.JComboBox<>();
+        lblRestaurante = new javax.swing.JLabel();
+        cbxRestaurante = new javax.swing.JComboBox<>();
         JpCentral = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
@@ -197,31 +200,48 @@ public class GUIPagMenuPedidoAdministrador extends javax.swing.JInternalFrame {
             }
         });
 
+        lblRestaurante.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblRestaurante.setText("RESTAURANTE:");
+
+        cbxRestaurante.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        cbxRestaurante.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "0" }));
+        cbxRestaurante.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbxRestauranteActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(jLabel11)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(cbxMostrarPedido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblRestaurante)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(cbxRestaurante, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(58, 58, 58))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(31, 31, 31)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton3)
                     .addComponent(jLabel11)
-                    .addComponent(cbxMostrarPedido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(63, Short.MAX_VALUE))
+                    .addComponent(cbxMostrarPedido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblRestaurante)
+                    .addComponent(cbxRestaurante, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton3))
+                .addContainerGap(60, Short.MAX_VALUE))
         );
 
         jPanel2.add(jPanel3, java.awt.BorderLayout.CENTER);
@@ -234,7 +254,7 @@ public class GUIPagMenuPedidoAdministrador extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 687, Short.MAX_VALUE)
                 .addContainerGap())
         );
         JpSuperiorLayout.setVerticalGroup(
@@ -295,22 +315,21 @@ public class GUIPagMenuPedidoAdministrador extends javax.swing.JInternalFrame {
         int columna=tablaPedido.getColumnModel().getColumnIndexAtX(evt.getX()); 
         
         if (columna==7) {
-            IRestauranteAccess repo = Factory.getInstance().getRestauranteService();
             int fila=evt.getY()/tablaPedido.getRowHeight();
             DefaultTableModel modelo = (DefaultTableModel) tablaPedido.getModel();
             
-            List<Pedido> pedidos = repo.getPedidos(1, cbxMostrarPedido.getSelectedIndex());
+            List<Pedido> pedidos = service.getPedidos(cbxRestaurante.getSelectedIndex(), cbxMostrarPedido.getSelectedIndex());
             int codigo =-1;
             for (Pedido pedido : pedidos) {
                 if (pedido.getPe_id()==Integer.parseInt(modelo.getValueAt(fila, 0).toString())) {
                     codigo = pedido.getPe_id();
                     byte estado = 1;
                     pedido.setPe_estado(estado);
-                    repo.updatePedido(codigo, pedido);
+                    service.updatePedido(codigo, pedido);
                 }
             }
             
-//            repo.updatePedido(, pedido);
+//            service.updatePedido(, pedido);
             successMessage("Se envio con exito el pedido con Codigo: "+codigo,"Estado Del Pedido");
             listarRegistro();
             
@@ -323,11 +342,17 @@ public class GUIPagMenuPedidoAdministrador extends javax.swing.JInternalFrame {
         
     }//GEN-LAST:event_cbxMostrarPedidoActionPerformed
 
+    private void cbxRestauranteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxRestauranteActionPerformed
+        // TODO add your handling code here:
+        listarRegistro();
+    }//GEN-LAST:event_cbxRestauranteActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel JpCentral;
     private javax.swing.JPanel JpSuperior;
     private javax.swing.JComboBox<String> cbxMostrarPedido;
+    private javax.swing.JComboBox<String> cbxRestaurante;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -345,6 +370,7 @@ public class GUIPagMenuPedidoAdministrador extends javax.swing.JInternalFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTextField2;
+    private javax.swing.JLabel lblRestaurante;
     private javax.swing.JTable tablaPedido;
     // End of variables declaration//GEN-END:variables
 }

@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * Aplicación principal. Debe estar decorada con la
  * anotación @SpringBootApplication
  * 
- * @author Kevith Felipe Bastidas
+ * @author Kevith Felipe Bastidas 
  */
 @SpringBootApplication
 public class ServicioRestauranteApplication {

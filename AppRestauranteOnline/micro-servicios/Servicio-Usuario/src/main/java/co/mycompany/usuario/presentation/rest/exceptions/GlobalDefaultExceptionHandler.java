@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
  * Para capturar errores o excepciones de manera global, se crear esta clase
  * anotada con @ControllerAdvic. Aquí define cada tipo de error que se desea
  * manejar con @ExceptionHandler. Este método recibe la excepción en particular.
- * Se puede manejar todas las excepciones que se desee.
+ * Se puede manejar todas las excepciones que se desee. 
  * 
  * @author Kevith Felipe Bastidas
  *

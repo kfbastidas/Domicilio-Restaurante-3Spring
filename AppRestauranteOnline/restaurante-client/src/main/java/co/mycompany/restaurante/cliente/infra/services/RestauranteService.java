@@ -1,9 +1,10 @@
-package co.mycompany.restaurante.cliente.domain.services;
+package co.mycompany.restaurante.cliente.infra.services;
 
 import co.mycompany.restaurante.cliente.access.Factory;
 import co.mycompany.restaurante.cliente.access.IRestauranteAccess;
 import co.mycompany.restaurante.cliente.domain.entity.Componente;
 import co.mycompany.restaurante.cliente.domain.entity.DiaSemana;
+import co.mycompany.restaurante.cliente.domain.entity.Pedido;
 import co.mycompany.restaurante.cliente.domain.entity.Plato;
 import co.mycompany.restaurante.cliente.domain.entity.Restaurante;
 import co.mycompany.restaurante.cliente.domain.entity.Usuario;
@@ -115,5 +116,60 @@ public class RestauranteService{
      */
     public Usuario getAdministrador(String usuario){
         return service.getUsuario(usuario);
+    }
+    
+    /**
+     * Adiciona la informacion de los pedidos de un restaurante en un dia determinado.
+     * @param pedido
+     * @return 
+     */
+    public String addPedido(Pedido pedido){
+        return service.addPedido(pedido);
+    }
+    
+    /**
+     * obtiene los pedidos de un usuario determinado
+     * @param user
+     * @return 
+     */
+    public List<Pedido> getPedidos(String user){
+        return service.getPedidos(user);
+    }
+    
+    /**
+     * obtiene un resturante buscado por el id
+     * @param idRestaurante
+     * @return 
+     */
+    public Restaurante getRestaurante(int idRestaurante){
+        return service.getRestaurante(idRestaurante);
+    }  
+    
+    /**
+     * obtiene la clave del administrador en caso de existir
+     * @param usuario
+     * @return 
+     */
+    public Usuario getUsuario(String usuario) {
+        return service.getUsuario(usuario);
+    }
+    /**
+     * obtiene los pedidos de un restaurante y estado determinado
+     * @param idRestaurante
+     * @param estado
+     * @return 
+     */
+    public List<Pedido> getPedidos(int idRestaurante,int estado){
+        return this.service.getPedidos(idRestaurante, estado);
+    }
+    
+     /**
+     * Actualiza el pedido de un usuario determinado
+     * @param pe_id
+     * @param pedido
+     * @return 
+     */
+    public String updatePedido(int pe_id,Pedido pedido){
+        return this.service.updatePedido(pe_id, pedido);
     }
 }

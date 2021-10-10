@@ -68,20 +68,19 @@ public class ClientServiceRestComp {
         
     }
     
-    public List<Componente> getMenuComponentes(int idRestaurante,DiaSemana dia)throws ClientErrorException{
+    public List<Integer> getMenuComponentes(int idRestaurante,DiaSemana dia)throws ClientErrorException{
         initRestComponente();
-        GenericType<List<Componente>> listResponseType = new GenericType<List<Componente>>(){};
-        String formato = java.text.MessageFormat.format("{0}", idRestaurante);
+        GenericType<List<Integer>> listResponseType = new GenericType<List<Integer>>(){};
+        String formato = java.text.MessageFormat.format("{0}/{1}", idRestaurante,dia);
         webTarget = webTarget.path(formato);
-        formato = java.text.MessageFormat.format("{0}", dia);
-        webTarget = webTarget.path(formato);
-        List<Componente> componentes = new ArrayList<>();
+        
+        List<Integer> Idcomponentes = new ArrayList<>();
         try {
-            componentes = webTarget.request(MediaType.APPLICATION_JSON).get(listResponseType);
+            Idcomponentes = webTarget.request(MediaType.APPLICATION_JSON).get(listResponseType);
         } catch (Exception e) {
         }
         close();
-        return componentes;
+        return Idcomponentes;
     }
     
     

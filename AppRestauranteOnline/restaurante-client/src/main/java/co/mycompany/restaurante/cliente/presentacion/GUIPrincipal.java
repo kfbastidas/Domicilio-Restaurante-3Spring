@@ -1,13 +1,16 @@
 package co.mycompany.restaurante.cliente.presentacion;
 import co.mycompany.restaurante.cliente.domain.TipoUser;
-import co.mycompany.restaurante.cliente.domain.services.RestauranteService;
-import co.mycompany.restaurante.cliente.domain.services.UserService;
+import co.mycompany.restaurante.cliente.domain.entity.Restaurante;
+import co.mycompany.restaurante.cliente.infra.services.RestauranteService;
+import co.mycompany.restaurante.cliente.infra.services.UserService;
 import static co.mycompany.restaurante.cliente.infra.Messages.successMessage;
 import static co.mycompany.restaurante.cliente.infra.Messages.warningMessage;
 import co.mycompany.restaurante.cliente.infra.Security;
 import java.awt.Component;
 import java.awt.Graphics;
 import java.awt.Image;
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.ImageIcon;
 /**
  *
@@ -226,10 +229,10 @@ public class GUIPrincipal extends javax.swing.JFrame {
     private void mnuPedidosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuPedidosActionPerformed
         // TODO add your handling code here:
         if (Security.usuario.getLogin()==TipoUser.ADMINISTRADOR) {
-            GUIPagMenuPedidoAdministrador vistaPedido = new GUIPagMenuPedidoAdministrador(service, this);
+            GUIPagMenuPedidoAdministrador vistaPedido = new GUIPagMenuPedidoAdministrador(service);
             this.agregarComponente(vistaPedido);
         }else{
-            GUIPagMenuPedidoUsuario vistaPedido = new GUIPagMenuPedidoUsuario(this);
+            GUIPagMenuPedidoUsuario vistaPedido = new GUIPagMenuPedidoUsuario(service);
             this.agregarComponente(vistaPedido);
         }
         
@@ -402,7 +405,10 @@ public class GUIPrincipal extends javax.swing.JFrame {
         dpDesktop.add(componente);
         componente.show();
     }
-    
+    /**
+     * obtiene el escritorio de la pagina principal
+     * @return 
+     */
     public javax.swing.JDesktopPane getEscritorio(){
         return this.dpDesktop;
     }

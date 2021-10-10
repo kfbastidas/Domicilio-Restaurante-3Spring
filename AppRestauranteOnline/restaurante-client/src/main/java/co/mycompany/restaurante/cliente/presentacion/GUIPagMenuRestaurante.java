@@ -1,7 +1,7 @@
 package co.mycompany.restaurante.cliente.presentacion;
 import co.mycompany.restaurante.cliente.domain.entity.DiaSemana;
 import co.mycompany.restaurante.cliente.domain.entity.Restaurante;
-import co.mycompany.restaurante.cliente.domain.services.RestauranteService;
+import co.mycompany.restaurante.cliente.infra.services.RestauranteService;
 import co.mycompany.restaurante.cliente.infra.Security;
 import co.mycompany.restaurante.cliente.infra.imgTabla;
 import java.awt.image.BufferedImage;

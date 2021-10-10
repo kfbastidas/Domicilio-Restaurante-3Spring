@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: co.mycompany.restaurante.server.access.RestauranteRepositoryImplJersey
 -------------------------------------------------------------------------------
-Tests run: 15, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 47.261 sec
+Tests run: 18, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 18.682 sec
