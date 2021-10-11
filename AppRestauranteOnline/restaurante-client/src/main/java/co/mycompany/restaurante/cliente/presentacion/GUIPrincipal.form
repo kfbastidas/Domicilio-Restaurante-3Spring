@@ -6,10 +6,13 @@
       <SubComponents>
         <Menu class="javax.swing.JMenu" name="mnuOpciones">
           <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/resources/opciones.png"/>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="new javax.swing.ImageIcon(&quot;./src/main/java/resources/opciones.png&quot;)" type="code"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Opciones"/>
+            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+              <Color id="Hand Cursor"/>
+            </Property>
           </Properties>
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="mnuRestaurantes">
@@ -17,10 +20,13 @@
                 <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
                   <KeyStroke key="Ctrl+M"/>
                 </Property>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/resources/menu.png"/>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                  <Connection code="new javax.swing.ImageIcon(&quot;./src/main/java/resources/menu.png&quot;)" type="code"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Menu Restaurantes"/>
+                <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                  <Color id="Hand Cursor"/>
+                </Property>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mnuRestaurantesActionPerformed"/>
@@ -28,10 +34,13 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="mnuAgregarComponentes">
               <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/resources/mas.png"/>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                  <Connection code="new javax.swing.ImageIcon(&quot;./src/main/java/resources/mas.png&quot;)" type="code"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="AgregarComponentes"/>
+                <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                  <Color id="Hand Cursor"/>
+                </Property>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mnuAgregarComponentesActionPerformed"/>
@@ -41,10 +50,13 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="mnuPedidos">
               <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/resources/pedido.png"/>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                  <Connection code="new javax.swing.ImageIcon(&quot;./src/main/java/resources/pedido.png&quot;)" type="code"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Pedidos"/>
+                <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                  <Color id="Hand Cursor"/>
+                </Property>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mnuPedidosActionPerformed"/>
@@ -52,10 +64,13 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="mnuConfiguracionCuenta">
               <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/resources/configuracion.png"/>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                  <Connection code="new javax.swing.ImageIcon(&quot;./src/main/java/resources/configuracion.png&quot;)" type="code"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Configuracion De Cuenta"/>
+                <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                  <Color id="Hand Cursor"/>
+                </Property>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mnuConfiguracionCuentaActionPerformed"/>
@@ -66,10 +81,13 @@
                 <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
                   <KeyStroke key="Ctrl+C"/>
                 </Property>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/resources/recibo-salida.png"/>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                  <Connection code="new javax.swing.ImageIcon(&quot;./src/main/java/resources/recibo-salida.png&quot;)" type="code"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Cerrar Seccion"/>
+                <Property name="text" type="java.lang.String" value="Cerrar Sesi&#xf3;n"/>
+                <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                  <Color id="Hand Cursor"/>
+                </Property>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mnuCerrarSeccionActionPerformed"/>
@@ -79,15 +97,21 @@
         </Menu>
         <Menu class="javax.swing.JMenu" name="mnuInformes">
           <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/resources/informe.png"/>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="new javax.swing.ImageIcon(&quot;./src/main/java/resources/informe.png&quot;)" type="code"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Informes"/>
+            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+              <Color id="Hand Cursor"/>
+            </Property>
           </Properties>
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="mnuIngresosPorFecha">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Ingresos por fecha"/>
+                <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                  <Color id="Hand Cursor"/>
+                </Property>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mnuIngresosPorFechaActionPerformed"/>
@@ -96,6 +120,9 @@
             <MenuItem class="javax.swing.JMenuItem" name="mnuConsultaAbierta">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Consulta Abierta"/>
+                <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                  <Color id="Hand Cursor"/>
+                </Property>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mnuConsultaAbiertaActionPerformed"/>
@@ -105,10 +132,13 @@
         </Menu>
         <Menu class="javax.swing.JMenu" name="mnuIniciarSecion">
           <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/resources/loginMenu.png"/>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="new javax.swing.ImageIcon(&quot;./src/main/java/resources/loginMenu.png&quot;)" type="code"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Iniciar Seccion"/>
+            <Property name="text" type="java.lang.String" value="Iniciar Sesi&#xf3;n"/>
+            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+              <Color id="Hand Cursor"/>
+            </Property>
           </Properties>
           <Events>
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="mnuIniciarSecionMouseClicked"/>
@@ -116,10 +146,13 @@
         </Menu>
         <Menu class="javax.swing.JMenu" name="mnuAyuda">
           <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/resources/ayuda.png"/>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="new javax.swing.ImageIcon(&quot;./src/main/java/resources/ayuda.png&quot;)" type="code"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Ayuda"/>
+            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+              <Color id="Hand Cursor"/>
+            </Property>
           </Properties>
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="mnuAcercaDe">
@@ -128,6 +161,9 @@
                   <KeyStroke key="Ctrl+H"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Acerca de"/>
+                <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                  <Color id="Hand Cursor"/>
+                </Property>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mnuAcercaDeActionPerformed"/>
@@ -139,6 +175,9 @@
                   <KeyStroke key="Ctrl+P"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Como Se Usa"/>
+                <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                  <Color id="Hand Cursor"/>
+                </Property>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mnuComoSeUsaLaAppActionPerformed"/>
@@ -148,8 +187,8 @@
         </Menu>
         <Menu class="javax.swing.JMenu" name="mnuSalir">
           <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/resources/recibo-salida.png"/>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="new javax.swing.ImageIcon(&quot;./src/main/java/resources/recibo-salida.png&quot;)" type="code"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Salir"/>
           </Properties>
@@ -205,7 +244,7 @@
     <Container class="javax.swing.JDesktopPane" name="dpDesktop">
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JDesktopPane(){&#xa;    public void paintComponent(Graphics g){&#xa;        g.drawImage(image,0,0,getWidth(),getHeight(),this);&#xa;    }&#xa;}"/>
-        <AuxValue name="JavaCodeGenerator_CreateCodePre" type="java.lang.String" value="ImageIcon icon = new ImageIcon(getClass().getResource(&quot;/resources/logoRestaurante.jpg&quot;));&#xa;Image image = icon.getImage();"/>
+        <AuxValue name="JavaCodeGenerator_CreateCodePre" type="java.lang.String" value="ImageIcon icon = new ImageIcon(&quot;./src/main/java/resources/logoRestaurante.jpg&quot;);&#xa;Image image = icon.getImage();"/>
       </AuxValues>
 
       <Layout>
@@ -216,7 +255,7 @@
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <EmptySpace min="0" pref="380" max="32767" attributes="0"/>
+              <EmptySpace min="0" pref="389" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
       </Layout>

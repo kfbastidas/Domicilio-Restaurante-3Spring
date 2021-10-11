@@ -123,7 +123,7 @@ public class GUIPagMenuPedidoUsuario extends javax.swing.JInternalFrame {
         JpSuperior.setLayout(new java.awt.GridBagLayout());
 
         jLabel1.setBackground(new java.awt.Color(159, 0, 70));
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/rest.jpg"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon("./src/main/java/resources/rest.jpg"));
         JpSuperior.add(jLabel1, new java.awt.GridBagConstraints());
 
         JpOpciones.setLayout(new java.awt.BorderLayout());
@@ -140,6 +140,7 @@ public class GUIPagMenuPedidoUsuario extends javax.swing.JInternalFrame {
         BtnAyuda.setBackground(new java.awt.Color(255, 255, 255));
         BtnAyuda.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         BtnAyuda.setText("Ayuda en linea");
+        BtnAyuda.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         BtnAyuda.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtnAyudaActionPerformed(evt);

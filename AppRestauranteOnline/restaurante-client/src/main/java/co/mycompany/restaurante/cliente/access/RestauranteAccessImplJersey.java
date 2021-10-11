@@ -1,7 +1,7 @@
 package co.mycompany.restaurante.cliente.access;
 
+import co.mycompany.restaurante.cliente.access.servicejersey.*;
 import co.mycompany.restaurante.cliente.domain.entity.*;
-import co.mycompany.restaurante.cliente.infra.*;
 import java.util.ArrayList;
 import java.util.List;
 

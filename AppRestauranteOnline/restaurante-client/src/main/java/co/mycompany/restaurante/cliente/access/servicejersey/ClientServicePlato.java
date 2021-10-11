@@ -1,7 +1,8 @@
-package co.mycompany.restaurante.cliente.infra;
+package co.mycompany.restaurante.cliente.access.servicejersey;
 
 import co.mycompany.restaurante.cliente.domain.entity.DiaSemana;
 import co.mycompany.restaurante.cliente.domain.entity.Plato;
+import co.mycompany.restaurante.cliente.infra.Utilities;
 import javax.ws.rs.ClientErrorException;
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;

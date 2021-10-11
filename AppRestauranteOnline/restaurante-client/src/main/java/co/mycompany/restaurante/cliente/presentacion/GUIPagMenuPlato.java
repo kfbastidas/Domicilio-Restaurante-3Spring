@@ -5,6 +5,7 @@ import co.mycompany.restaurante.cliente.domain.TipoUser;
 import co.mycompany.restaurante.cliente.domain.entity.Componente;
 import co.mycompany.restaurante.cliente.domain.entity.Pedido;
 import co.mycompany.restaurante.cliente.domain.entity.Restaurante;
+import static co.mycompany.restaurante.cliente.infra.Messages.successMessage;
 import static co.mycompany.restaurante.cliente.infra.Messages.warningMessage;
 import co.mycompany.restaurante.cliente.infra.Security;
 import java.awt.image.BufferedImage;
@@ -107,7 +108,7 @@ public class GUIPagMenuPlato extends javax.swing.JInternalFrame {
         jPanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel1.setLayout(new java.awt.GridLayout(1, 0));
 
-        lblImagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/sincaratula.jpg"))); // NOI18N
+        lblImagen.setIcon(new javax.swing.ImageIcon("./src/main/java/resources/sincaratula.jpg"));
         jPanel1.add(lblImagen);
 
         jPanel7.setLayout(new java.awt.GridLayout(2, 0));
@@ -198,7 +199,7 @@ public class GUIPagMenuPlato extends javax.swing.JInternalFrame {
 
         cbxEntrada.setFont(new java.awt.Font("Verdana", 1, 13)); // NOI18N
         cbxEntrada.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opcion", "Item 1", "Item 2", "Item 3", "Item 4" }));
-        cbxEntrada.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        cbxEntrada.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         cbxEntrada.setNextFocusableComponent(cbxPrincipio);
         jPanel2.add(cbxEntrada);
 
@@ -209,7 +210,7 @@ public class GUIPagMenuPlato extends javax.swing.JInternalFrame {
 
         cbxPrincipio.setFont(new java.awt.Font("Verdana", 1, 13)); // NOI18N
         cbxPrincipio.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opcion", "Item 1", "Item 2", "Item 3", "Item 4" }));
-        cbxPrincipio.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        cbxPrincipio.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel2.add(cbxPrincipio);
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -219,7 +220,7 @@ public class GUIPagMenuPlato extends javax.swing.JInternalFrame {
 
         cbxProteina.setFont(new java.awt.Font("Verdana", 1, 13)); // NOI18N
         cbxProteina.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opcion", "Item 1", "Item 2", "Item 3", "Item 4" }));
-        cbxProteina.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        cbxProteina.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel2.add(cbxProteina);
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -229,7 +230,7 @@ public class GUIPagMenuPlato extends javax.swing.JInternalFrame {
 
         cbxBebida.setFont(new java.awt.Font("Verdana", 1, 13)); // NOI18N
         cbxBebida.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opcion", "Item 1", "Item 2", "Item 3", "Item 4" }));
-        cbxBebida.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        cbxBebida.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel2.add(cbxBebida);
 
         jPanel6.setLayout(new java.awt.GridLayout(1, 0));
@@ -244,7 +245,7 @@ public class GUIPagMenuPlato extends javax.swing.JInternalFrame {
         jPanel5.setLayout(new java.awt.GridLayout(1, 0));
 
         lblDisminuirCantidad.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        lblDisminuirCantidad.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/menos.png"))); // NOI18N
+        lblDisminuirCantidad.setIcon(new javax.swing.ImageIcon("./src/main/java/resources/menos.png"));
         lblDisminuirCantidad.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lblDisminuirCantidadMouseClicked(evt);
@@ -258,7 +259,7 @@ public class GUIPagMenuPlato extends javax.swing.JInternalFrame {
         jPanel5.add(lblCantidad);
 
         lblAgregarCantidad.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        lblAgregarCantidad.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/mas.png"))); // NOI18N
+        lblAgregarCantidad.setIcon(new javax.swing.ImageIcon("./src/main/java/resources/mas.png"));
         lblAgregarCantidad.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lblAgregarCantidadMouseClicked(evt);
@@ -273,7 +274,7 @@ public class GUIPagMenuPlato extends javax.swing.JInternalFrame {
         jPanel3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         lblDatosDelRestaurante.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        lblDatosDelRestaurante.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/imagenPlato.png"))); // NOI18N
+        lblDatosDelRestaurante.setIcon(new javax.swing.ImageIcon("./src/main/java/resources/imagenPlato.png"));
         lblDatosDelRestaurante.setText("RESTAURANTE: NOMBRE");
         jPanel3.add(lblDatosDelRestaurante);
 
@@ -283,8 +284,9 @@ public class GUIPagMenuPlato extends javax.swing.JInternalFrame {
         jPanel4.setLayout(new java.awt.GridLayout(1, 0));
 
         btnGenerarPedido.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnGenerarPedido.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/confirmar.png"))); // NOI18N
+        btnGenerarPedido.setIcon(new javax.swing.ImageIcon("./src/main/java/resources/confirmar.png"));
         btnGenerarPedido.setText("Generar Pedido");
+        btnGenerarPedido.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnGenerarPedido.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnGenerarPedidoActionPerformed(evt);
@@ -293,8 +295,9 @@ public class GUIPagMenuPlato extends javax.swing.JInternalFrame {
         jPanel4.add(btnGenerarPedido);
 
         btnVolver.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnVolver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/recibo-salida.png"))); // NOI18N
+        btnVolver.setIcon(new javax.swing.ImageIcon("./src/main/java/resources/recibo-salida.png"));
         btnVolver.setText("Volver Menu Principal");
+        btnVolver.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnVolver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnVolverActionPerformed(evt);
@@ -325,6 +328,8 @@ public class GUIPagMenuPlato extends javax.swing.JInternalFrame {
                 //warningMessage("Se genero el pedido....", "Atención");
             }
             
+        }else{
+            warningMessage("Por Favor Complete Todos Los Campos....", "Atención");
         }
         
     }//GEN-LAST:event_btnGenerarPedidoActionPerformed
@@ -344,8 +349,7 @@ public class GUIPagMenuPlato extends javax.swing.JInternalFrame {
         String result = repo.addPedido(pedido);
         String expResult = "Pedido añadido correctamente";
         if (result.equals(expResult)) {
-            JOptionPane.showMessageDialog(null, "Se genero el pedido con exito.\nSu pedido llegara en un tiempo promedio de acuerdo a su ubicacion", 
-                "Pedido exitoso", JOptionPane.OK_OPTION);
+            successMessage("Se genero el pedido con exito.\nSu pedido llegara en un tiempo promedio de acuerdo a su ubicacion","Pedido exitoso");
         }
         this.listarDatos();
         lblCantidad.setText(0 + "");

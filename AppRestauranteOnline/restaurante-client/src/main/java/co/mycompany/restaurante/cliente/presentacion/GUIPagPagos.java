@@ -1,7 +1,8 @@
 package co.mycompany.restaurante.cliente.presentacion;
 
-import co.mycompany.restaurante.cliente.sistemadepago.GUIPagBancoPSE;
-import co.mycompany.restaurante.cliente.sistemadepago.GUIPagTarjetaCredito;
+import static co.mycompany.restaurante.cliente.infra.Messages.successMessage;
+import co.mycompany.restaurante.cliente.presentacion.mediodepago.GUIPagBancoPSE;
+import co.mycompany.restaurante.cliente.presentacion.mediodepago.GUIPagTarjetaCredito;
 import javax.swing.JOptionPane;
 /**
  *
@@ -21,8 +22,6 @@ public class GUIPagPagos extends javax.swing.JInternalFrame {
         this.vistaMenuPlato = vistaMenuPlato;
         setSize(431, 524);
     }
-
-
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -48,37 +47,41 @@ public class GUIPagPagos extends javax.swing.JInternalFrame {
         pnlPrincipal.setAutoscrolls(true);
 
         lbCentroTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbCentroTitulo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/metodo-de-pago.png"))); // NOI18N
+        lbCentroTitulo.setIcon(new javax.swing.ImageIcon("./src/main/java/resources/metodo-de-pago.png"));
 
         lbSelectMetodoPago.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbSelectMetodoPago.setText("Seleccione su método de pago:");
 
-        btnPSE.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/logo-pse.png"))); // NOI18N
+        btnPSE.setIcon(new javax.swing.ImageIcon("./src/main/java/resources/logo-pse.png"));
         btnPSE.setText("PSE");
+        btnPSE.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnPSE.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnPSEActionPerformed(evt);
             }
         });
 
-        btnTarjCredito.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/pago-con-tarjetas-de-credito.png"))); // NOI18N
+        btnTarjCredito.setIcon(new javax.swing.ImageIcon("./src/main/java/resources/pago-con-tarjetas-de-credito.png"));
         btnTarjCredito.setText("Tarjeta de crédito");
+        btnTarjCredito.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnTarjCredito.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnTarjCreditoActionPerformed(evt);
             }
         });
 
-        btnEfectivo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/pago-en-efectivo.png"))); // NOI18N
+        btnEfectivo.setIcon(new javax.swing.ImageIcon("./src/main/java/resources/pago-en-efectivo.png"));
         btnEfectivo.setText("Efectivo");
+        btnEfectivo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnEfectivo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEfectivoActionPerformed(evt);
             }
         });
 
-        btnVolerMenuPrincipal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/regreso.png"))); // NOI18N
+        btnVolerMenuPrincipal.setIcon(new javax.swing.ImageIcon("./src/main/java/resources/regreso.png"));
         btnVolerMenuPrincipal.setText("Cancelar Pedido");
+        btnVolerMenuPrincipal.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnVolerMenuPrincipal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnVolerMenuPrincipalActionPerformed(evt);
@@ -150,43 +153,42 @@ public class GUIPagPagos extends javax.swing.JInternalFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    /**
+     * Crea una instancia de GUIPagBancoPSE y la muestra
+     * La vista maneja el pago por medio de PSE
+     * @param evt 
+     */
     private void btnPSEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPSEActionPerformed
-
-//        JOptionPane.showMessageDialog(null, "Pago del pedido realizado con éxito", 
-//                "Pago exitoso", JOptionPane.OK_OPTION);
-//        generarPago("PSE");
         GUIPagBancoPSE vistaPSE = new GUIPagBancoPSE(this);
         this.vistaMenuPlato.getVistaPrincipal().agregarComponente(vistaPSE);
     }//GEN-LAST:event_btnPSEActionPerformed
-
+    /**
+     * Crea una instancia de GUIPagTarjetaCredito y la muestra
+     * La vista maneja el pago por medio de Tarjeta de Credito.
+     * @param evt 
+     */
     private void btnTarjCreditoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTarjCreditoActionPerformed
-//        JOptionPane.showMessageDialog(null, "Pago del pedido realizado con éxito",
-//                "Pago exitoso", JOptionPane.OK_OPTION);
-//        generarPago("TARJETA CREDITO");
         GUIPagTarjetaCredito vistaPSE = new GUIPagTarjetaCredito(this);
         this.vistaMenuPlato.getVistaPrincipal().agregarComponente(vistaPSE);
     }//GEN-LAST:event_btnTarjCreditoActionPerformed
-
+    /**
+     * Realiza el pago mediante EFECTIVO 
+     * @param evt 
+     */
     private void btnEfectivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEfectivoActionPerformed
-        JOptionPane.showMessageDialog(null, "Pedido registrado con éxito, deberá pagar cuando se entregue el pedido", 
-                "Pedido solicitado", JOptionPane.OK_OPTION);
+        successMessage("Pedido registrado con éxito, deberá pagar cuando se entregue el pedido","Pedido solicitado");
         
         this.vistaMenuPlato.getVistaPrincipal().agregarComponente(vistaMenuPlato);
         this.vistaMenuPlato.generarPedido("Efectivo");
     }//GEN-LAST:event_btnEfectivoActionPerformed
-
+    /**
+     * En caso de querer cancelar el pedido lo redireccionara a la vista
+     * del Menu de Plato
+     * @param evt 
+     */
     private void btnVolerMenuPrincipalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolerMenuPrincipalActionPerformed
         this.vistaMenuPlato.getVistaPrincipal().agregarComponente(vistaMenuPlato);
-//        vistaMenuPlato.show();
     }//GEN-LAST:event_btnVolerMenuPrincipalActionPerformed
-    
-    public void generarPago(String metodo){
-        System.out.println("");
-//        this.vistaMenuPlato.getVistaPrincipal().agregarComponente(vistaMenuPlato);
-//        this.vistaMenuPlato.generarPedido(metodo);
-    }
-
     /**
      * Devuelve una referencia de la vistaPrincipal
      * @return 
@@ -194,7 +196,10 @@ public class GUIPagPagos extends javax.swing.JInternalFrame {
     public GUIPrincipal getVistaPrincipal(){
         return this.vistaMenuPlato.getVistaPrincipal();
     }
-    
+    /**
+     * Devuelve una referencia de la vistaMenuPlato
+     * @return 
+     */
     public GUIPagMenuPlato getVistaMenuPlato(){
         return this.vistaMenuPlato;
     }

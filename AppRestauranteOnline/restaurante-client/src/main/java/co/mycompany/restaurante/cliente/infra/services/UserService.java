@@ -3,7 +3,9 @@ import co.mycompany.restaurante.cliente.access.Factory;
 import co.mycompany.restaurante.cliente.domain.TipoUser;
 import co.mycompany.restaurante.cliente.domain.User;
 import co.mycompany.restaurante.cliente.domain.entity.Usuario;
+import static co.mycompany.restaurante.cliente.infra.Messages.errorMessage;
 import static co.mycompany.restaurante.cliente.infra.Messages.successMessage;
+import static co.mycompany.restaurante.cliente.infra.Messages.warningMessage;
 import co.mycompany.restaurante.cliente.infra.Security;
 /**
  * Servicio de usuarios del sistema
@@ -43,11 +45,11 @@ public class UserService {
                 Security.usuario = user2;
                 return true;
             }
-            successMessage("Password Incorrecto.", "Atención");
+            errorMessage("Password Incorrecto.", "Atención");
             return false;
         }
         ponerUserInvitado();
-        successMessage("Username no existe.", "Atención");
+        errorMessage("Username no existe.", "Atención");
         return false;
     }   
     /**
@@ -58,11 +60,11 @@ public class UserService {
      */
     public static boolean validarUser(String username, String password){       
         if (username.equals("")) {
-            successMessage("Username Incorrecto.", "Atención");
+            warningMessage("Campo Username Vacio.", "Atención");
             return false;
         }
         if (password.equals("")) {
-            successMessage("Password Incorrecto.", "Atención");
+            warningMessage("Campo Password Vacio.", "Atención");
             return false;
         }
         return true;

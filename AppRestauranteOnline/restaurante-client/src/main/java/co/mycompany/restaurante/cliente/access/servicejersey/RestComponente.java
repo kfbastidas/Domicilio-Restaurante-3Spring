@@ -1,4 +1,4 @@
-package co.mycompany.restaurante.cliente.infra;
+package co.mycompany.restaurante.cliente.access.servicejersey;
 
 import java.io.Serializable;
 

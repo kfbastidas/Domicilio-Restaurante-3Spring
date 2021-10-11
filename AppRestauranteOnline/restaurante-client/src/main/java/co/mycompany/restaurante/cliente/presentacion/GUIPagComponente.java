@@ -3,6 +3,8 @@ import co.mycompany.restaurante.cliente.infra.services.RestauranteService;
 import static co.mycompany.restaurante.cliente.infra.Messages.successMessage;
 import co.mycompany.restaurante.cliente.domain.entity.Componente;
 import co.mycompany.restaurante.cliente.domain.entity.TipoComponente;
+import static co.mycompany.restaurante.cliente.infra.Messages.errorMessage;
+import static co.mycompany.restaurante.cliente.infra.Messages.warningMessage;
 /**
  *
  * @author kevith felipe bastidas
@@ -80,6 +82,7 @@ public class GUIPagComponente extends javax.swing.JInternalFrame {
 
         cbxTipoComponente.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         cbxTipoComponente.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione un tipo", "ENTRADA", "PRINCIPIO", "PROTEINA", "BEBIDA" }));
+        cbxTipoComponente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         cbxTipoComponente.setEnabled(false);
         cbxTipoComponente.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -94,7 +97,7 @@ public class GUIPagComponente extends javax.swing.JInternalFrame {
         pnlTitiulo.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         lblTitulo.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        lblTitulo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/imagenComponentes.png"))); // NOI18N
+        lblTitulo.setIcon(new javax.swing.ImageIcon("./src/main/java/resources/imagenComponentes.png"));
         lblTitulo.setText("INGRESAR LOS DATOS DEL COMPONENTE");
         pnlTitiulo.add(lblTitulo);
 
@@ -104,8 +107,9 @@ public class GUIPagComponente extends javax.swing.JInternalFrame {
         pnlButtons.setLayout(new java.awt.GridLayout(1, 0));
 
         btnAgregar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnAgregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/confirmar.png"))); // NOI18N
+        btnAgregar.setIcon(new javax.swing.ImageIcon("./src/main/java/resources/confirmar.png"));
         btnAgregar.setText("Agregar");
+        btnAgregar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnAgregar.setEnabled(false);
         btnAgregar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -160,11 +164,11 @@ public class GUIPagComponente extends javax.swing.JInternalFrame {
         Componente componente = new Componente();
 
         if ("".equals(txtId.getText())) {
-            successMessage("Campo id vacío.", "Atención");
+            warningMessage("Campo id vacío.", "Atención");
         }else if("".equals(txtNombre.getText())){
-            successMessage("Campo Nombre vacío.", "Atención");
+            warningMessage("Campo Nombre vacío.", "Atención");
         }else if(cbxTipoComponente.getItemAt(cbxTipoComponente.getSelectedIndex()).equals("Seleccione un tipo")){
-            successMessage("Seleccione un tipo de componente.", "Atención");
+            warningMessage("Seleccione un tipo de componente.", "Atención");
         }else{
             try {
                 componente.setId(Integer.parseInt(txtId.getText()));
@@ -181,10 +185,10 @@ public class GUIPagComponente extends javax.swing.JInternalFrame {
                     cbxTipoComponente.setEnabled(false);
                     btnAgregar.setEnabled(false);
                 }
-                successMessage(respuesta, "Atención");
+                errorMessage(respuesta, "Atención");
 
             } catch (NumberFormatException ex) {
-                successMessage("Id incorrecto", "Atención");
+                errorMessage("Id incorrecto", "Atención");
             }
         }
     }//GEN-LAST:event_btnAgregarActionPerformed

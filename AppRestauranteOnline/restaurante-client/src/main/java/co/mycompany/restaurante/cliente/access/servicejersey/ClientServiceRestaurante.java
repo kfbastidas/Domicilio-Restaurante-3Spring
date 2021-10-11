@@ -1,6 +1,7 @@
-package co.mycompany.restaurante.cliente.infra;
+package co.mycompany.restaurante.cliente.access.servicejersey;
 
 import co.mycompany.restaurante.cliente.domain.entity.Restaurante;
+import co.mycompany.restaurante.cliente.infra.Utilities;
 import java.text.MessageFormat;
 import java.util.List;
 import javax.ws.rs.ClientErrorException;

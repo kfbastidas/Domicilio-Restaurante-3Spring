@@ -6,6 +6,7 @@ import co.mycompany.restaurante.cliente.domain.entity.DiaSemana;
 import co.mycompany.restaurante.cliente.domain.entity.Plato;
 import co.mycompany.restaurante.cliente.domain.entity.Restaurante;
 import co.mycompany.restaurante.cliente.domain.entity.TipoComponente;
+import static co.mycompany.restaurante.cliente.infra.Messages.successMessage;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayInputStream;
 import java.io.File;
@@ -155,6 +156,7 @@ public class GUIPagAgregarPlato extends javax.swing.JInternalFrame {
         jPanel12.add(jLabel5);
 
         cbxSeleccionarDia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione el dia", "LUNES", "MARTES", "MIERCOLES", "JUEVES", "VIERNES", "SABADO", "DOMINGO" }));
+        cbxSeleccionarDia.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         cbxSeleccionarDia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbxSeleccionarDiaActionPerformed(evt);
@@ -168,6 +170,7 @@ public class GUIPagAgregarPlato extends javax.swing.JInternalFrame {
 
         cbxNumeroDeRegistros.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opcion", "5", "10", "20" }));
         cbxNumeroDeRegistros.setSelectedIndex(1);
+        cbxNumeroDeRegistros.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         cbxNumeroDeRegistros.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbxNumeroDeRegistrosActionPerformed(evt);
@@ -180,6 +183,7 @@ public class GUIPagAgregarPlato extends javax.swing.JInternalFrame {
         jPanel12.add(jLabel8);
 
         cbxOrdenamiento.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ID", "NOMBRE", "TIPO" }));
+        cbxOrdenamiento.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         cbxOrdenamiento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbxOrdenamientoActionPerformed(evt);
@@ -229,8 +233,9 @@ public class GUIPagAgregarPlato extends javax.swing.JInternalFrame {
         jPanel16.setLayout(new java.awt.GridLayout(1, 0));
 
         btnVerAnterioresComp.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnVerAnterioresComp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/anterior.png"))); // NOI18N
+        btnVerAnterioresComp.setIcon(new javax.swing.ImageIcon("./src/main/java/resources/anterior.png"));
         btnVerAnterioresComp.setText("anteriores");
+        btnVerAnterioresComp.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnVerAnterioresComp.setEnabled(false);
         btnVerAnterioresComp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -240,8 +245,9 @@ public class GUIPagAgregarPlato extends javax.swing.JInternalFrame {
         jPanel16.add(btnVerAnterioresComp);
 
         btnVerSiguienteComp.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnVerSiguienteComp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/siguiente.png"))); // NOI18N
+        btnVerSiguienteComp.setIcon(new javax.swing.ImageIcon("./src/main/java/resources/siguiente.png"));
         btnVerSiguienteComp.setText("siguientes");
+        btnVerSiguienteComp.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnVerSiguienteComp.setEnabled(false);
         btnVerSiguienteComp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -255,8 +261,9 @@ public class GUIPagAgregarPlato extends javax.swing.JInternalFrame {
         jPanel17.setLayout(new java.awt.GridLayout(1, 0));
 
         btnAgregarMenucomponente.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnAgregarMenucomponente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/mas.png"))); // NOI18N
+        btnAgregarMenucomponente.setIcon(new javax.swing.ImageIcon("./src/main/java/resources/mas.png"));
         btnAgregarMenucomponente.setText("Agregar componente al menu");
+        btnAgregarMenucomponente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnAgregarMenucomponente.setEnabled(false);
         btnAgregarMenucomponente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -298,8 +305,9 @@ public class GUIPagAgregarPlato extends javax.swing.JInternalFrame {
         jPanel4.add(jScrollPane2, java.awt.BorderLayout.CENTER);
 
         btnEliminarcomponenteMenu.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnEliminarcomponenteMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/eliminar.png"))); // NOI18N
+        btnEliminarcomponenteMenu.setIcon(new javax.swing.ImageIcon("./src/main/java/resources/eliminar.png"));
         btnEliminarcomponenteMenu.setText("Eliminar componente del menu");
+        btnEliminarcomponenteMenu.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnEliminarcomponenteMenu.setEnabled(false);
         btnEliminarcomponenteMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -320,7 +328,7 @@ public class GUIPagAgregarPlato extends javax.swing.JInternalFrame {
 
         jPanel9.setLayout(new java.awt.BorderLayout());
 
-        lblImagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/sincaratula.jpg"))); // NOI18N
+        lblImagen.setIcon(new javax.swing.ImageIcon("./src/main/java/resources/sincaratula.jpg"));
         jPanel15.add(lblImagen);
 
         jPanel9.add(jPanel15, java.awt.BorderLayout.CENTER);
@@ -328,8 +336,9 @@ public class GUIPagAgregarPlato extends javax.swing.JInternalFrame {
         jPanel18.setLayout(new java.awt.GridLayout(1, 0));
 
         btnEliminarImagen.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnEliminarImagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/eliminar.png"))); // NOI18N
+        btnEliminarImagen.setIcon(new javax.swing.ImageIcon("./src/main/java/resources/eliminar.png"));
         btnEliminarImagen.setText("Eliminar Imagen");
+        btnEliminarImagen.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnEliminarImagen.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEliminarImagenActionPerformed(evt);
@@ -338,8 +347,9 @@ public class GUIPagAgregarPlato extends javax.swing.JInternalFrame {
         jPanel18.add(btnEliminarImagen);
 
         btnSubirImagen.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnSubirImagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/subirArchivo.png"))); // NOI18N
+        btnSubirImagen.setIcon(new javax.swing.ImageIcon("./src/main/java/resources/subirArchivo.png"));
         btnSubirImagen.setText("Subir Imagen");
+        btnSubirImagen.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnSubirImagen.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSubirImagenActionPerformed(evt);
@@ -355,7 +365,7 @@ public class GUIPagAgregarPlato extends javax.swing.JInternalFrame {
 
         jPanel11.setLayout(new java.awt.GridLayout(2, 0));
 
-        jPanel19.setLayout(new java.awt.GridLayout());
+        jPanel19.setLayout(new java.awt.GridLayout(1, 0));
 
         lblMensajePrecioPlato.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblMensajePrecioPlato.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -385,8 +395,9 @@ public class GUIPagAgregarPlato extends javax.swing.JInternalFrame {
         jPanel13.setLayout(new java.awt.GridLayout(1, 0));
 
         btnActualizarPlato.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnActualizarPlato.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/confirmar.png"))); // NOI18N
+        btnActualizarPlato.setIcon(new javax.swing.ImageIcon("./src/main/java/resources/confirmar.png"));
         btnActualizarPlato.setText("Actualizar Menu Plato");
+        btnActualizarPlato.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnActualizarPlato.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnActualizarPlatoActionPerformed(evt);
@@ -395,8 +406,9 @@ public class GUIPagAgregarPlato extends javax.swing.JInternalFrame {
         jPanel13.add(btnActualizarPlato);
 
         btnVistaPlato.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnVistaPlato.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/recibo-entrada.png"))); // NOI18N
+        btnVistaPlato.setIcon(new javax.swing.ImageIcon("./src/main/java/resources/recibo-entrada.png"));
         btnVistaPlato.setText("Vista Del Plato");
+        btnVistaPlato.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnVistaPlato.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnVistaPlatoActionPerformed(evt);
@@ -405,8 +417,9 @@ public class GUIPagAgregarPlato extends javax.swing.JInternalFrame {
         jPanel13.add(btnVistaPlato);
 
         btnVolverPagPrincipal.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnVolverPagPrincipal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/recibo-salida.png"))); // NOI18N
+        btnVolverPagPrincipal.setIcon(new javax.swing.ImageIcon("./src/main/java/resources/recibo-salida.png"));
         btnVolverPagPrincipal.setText("Volver Menu Principal");
+        btnVolverPagPrincipal.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnVolverPagPrincipal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnVolverPagPrincipalActionPerformed(evt);
@@ -884,7 +897,7 @@ public class GUIPagAgregarPlato extends javax.swing.JInternalFrame {
 
         actualizarMenuComponente();
         
-        warningMessage("Se actualizo el plato menu exitosamente", "Atención");
+        successMessage("Se actualizo el plato menu exitosamente", "Atención");
         //cbxSeleccionarDia.setSelectedIndex(0);
         actualizarRegistrosDelDia();
     }

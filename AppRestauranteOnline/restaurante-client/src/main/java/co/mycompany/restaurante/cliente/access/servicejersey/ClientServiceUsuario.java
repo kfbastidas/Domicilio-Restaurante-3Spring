@@ -1,5 +1,6 @@
-package co.mycompany.restaurante.cliente.infra;
+package co.mycompany.restaurante.cliente.access.servicejersey;
 import co.mycompany.restaurante.cliente.domain.entity.Usuario;
+import co.mycompany.restaurante.cliente.infra.Utilities;
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.WebTarget;

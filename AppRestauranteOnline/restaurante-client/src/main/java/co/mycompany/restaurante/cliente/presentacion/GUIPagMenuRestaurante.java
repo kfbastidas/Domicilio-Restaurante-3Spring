@@ -87,7 +87,7 @@ public class GUIPagMenuRestaurante extends javax.swing.JInternalFrame {
         }
         
         for (Restaurante restaurante : restaurantes) {    
-            restaurante.setFoto(getImagen("src/main/java/resources/restaurante" + restaurante.getId() + ".jpg"));
+            restaurante.setFoto(getImagen("./src/main/java/resources/restaurante" + restaurante.getId() + ".jpg"));
         }
         tablaRegistroRestaurantes.addColumn("<html><b><span style='font-size:16px'>Restaurantes</span></b></html>");
         tablaRegistroRestaurantes.addColumn("<html><b><span style='font-size:16px'>Informacion</span></b></html>");
@@ -113,10 +113,12 @@ public class GUIPagMenuRestaurante extends javax.swing.JInternalFrame {
             if (!Security.usuario.getLogin().name().equals("ADMINISTRADOR")) {
                 fila[3] = "LUNES";
                 JButton btnDetalles=new JButton("Seleccionar Almuerzo Ejecutivo.");
+                btnDetalles.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
                 fila[4] = btnDetalles;
                 
             }else{
                 JButton btnDetalles=new JButton("Configurar Almuerzo Ejecutivo.");
+                btnDetalles.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
                 fila[3] = btnDetalles;
             }
             tablaRegistroRestaurantes.addRow(fila);
@@ -125,6 +127,7 @@ public class GUIPagMenuRestaurante extends javax.swing.JInternalFrame {
         
         if (!Security.usuario.getLogin().name().equals("ADMINISTRADOR")) {
             JComboBox<String> cbxDia = new JComboBox<>();
+            cbxDia.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
             cbxDia.addItem("LUNES");
             cbxDia.addItem("MARTES");
             cbxDia.addItem("MIERCOLES");
@@ -139,6 +142,9 @@ public class GUIPagMenuRestaurante extends javax.swing.JInternalFrame {
             tabla.getColumnModel().getColumn(3).setCellRenderer(renderer);
             
             tabla.getColumnModel().getColumn(3).setPreferredWidth(300);
+            
+            
+            
             tabla.getColumnModel().getColumn(4).setPreferredWidth(300);
         }
         
@@ -179,7 +185,7 @@ public class GUIPagMenuRestaurante extends javax.swing.JInternalFrame {
             return img;
         } catch (Exception e) {
             try {
-                InputStream in = new ByteArrayInputStream(getImagen("src/main/java/resources/sincaratula.jpg"));
+                InputStream in = new ByteArrayInputStream(getImagen("./src/main/java/resources/sincaratula.jpg"));
                 BufferedImage image = ImageIO.read(in);
                 ImageIcon img = new ImageIcon(image.getScaledInstance(width, height, 0));
                 return img;

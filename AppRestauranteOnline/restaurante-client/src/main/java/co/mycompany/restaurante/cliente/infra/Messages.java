@@ -17,7 +17,7 @@ public class Messages {
      * @param title título de la ventana
      */
     public static void warningMessage(String mns, String title) {
-        JOptionPane.showMessageDialog(null, mns, title, JOptionPane.DEFAULT_OPTION, new ImageIcon("./src/recursos/warning.png"));
+        JOptionPane.showMessageDialog(null, mns, title, JOptionPane.DEFAULT_OPTION, new ImageIcon("./src/main/java/resources/warning.png"));
     }
 
     /**
@@ -27,7 +27,7 @@ public class Messages {
      * @param titulo título de la ventana
      */
     public static void errorMessage(String mns, String titulo) {
-        JOptionPane.showMessageDialog(null, mns, titulo, JOptionPane.DEFAULT_OPTION, new ImageIcon("./src/recursos/warning.png"));
+        JOptionPane.showMessageDialog(null, mns, titulo, JOptionPane.DEFAULT_OPTION, new ImageIcon("./src/main/java/resources/cerrar.png"));
     }
 
     /**
@@ -37,7 +37,7 @@ public class Messages {
      * @param title título de la ventana
      */
     public static void successMessage(String mns, String title) {
-        JOptionPane.showMessageDialog(null, mns, title, JOptionPane.DEFAULT_OPTION, new ImageIcon("./src/recursos/exitoso.png"));
+        JOptionPane.showMessageDialog(null, mns, title, JOptionPane.DEFAULT_OPTION, new ImageIcon("./src/main/java/resources/exitoso.png"));
     }
 
     /**

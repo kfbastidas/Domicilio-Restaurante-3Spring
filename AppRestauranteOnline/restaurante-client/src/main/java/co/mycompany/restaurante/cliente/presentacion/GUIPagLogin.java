@@ -1,5 +1,6 @@
 package co.mycompany.restaurante.cliente.presentacion;
 import co.mycompany.restaurante.cliente.domain.TipoUser;
+import static co.mycompany.restaurante.cliente.infra.Messages.errorMessage;
 import co.mycompany.restaurante.cliente.infra.services.UserService;
 import static co.mycompany.restaurante.cliente.infra.Messages.successMessage;
 import co.mycompany.restaurante.cliente.infra.Security;
@@ -49,7 +50,7 @@ public class GUIPagLogin extends javax.swing.JInternalFrame {
         setClosable(true);
         setMaximizable(true);
         setResizable(true);
-        setTitle("Iniciar Seccion");
+        setTitle("Iniciar Sesión");
         getContentPane().setLayout(new java.awt.GridLayout(1, 0));
 
         jPanel4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, new java.awt.Color(0, 0, 0), null, null));
@@ -60,20 +61,16 @@ public class GUIPagLogin extends javax.swing.JInternalFrame {
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/usuarioLogin.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon("./src/main/java/resources/usuarioLogin.png"));
         jLabel1.setText("Usuario");
         jPanel1.add(jLabel1);
-
-        txtUsuario.setText("customer1");
         jPanel1.add(txtUsuario);
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/usuarioPassword.png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon("./src/main/java/resources/usuarioPassword.png"));
         jLabel2.setText("Password");
         jPanel1.add(jLabel2);
-
-        txtClave.setText("123456");
         jPanel1.add(txtClave);
 
         jPanel4.add(jPanel1, java.awt.BorderLayout.CENTER);
@@ -82,8 +79,9 @@ public class GUIPagLogin extends javax.swing.JInternalFrame {
         jPanel2.setLayout(new java.awt.GridLayout(1, 0));
 
         btnIniciarSeccion.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnIniciarSeccion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/confirmar.png"))); // NOI18N
+        btnIniciarSeccion.setIcon(new javax.swing.ImageIcon("./src/main/java/resources/confirmar.png"));
         btnIniciarSeccion.setText("Iniciar sesión");
+        btnIniciarSeccion.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnIniciarSeccion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnIniciarSeccionActionPerformed(evt);
@@ -92,8 +90,9 @@ public class GUIPagLogin extends javax.swing.JInternalFrame {
         jPanel2.add(btnIniciarSeccion);
 
         btnIngresarInvitado.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnIngresarInvitado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/recibo-entrada.png"))); // NOI18N
+        btnIngresarInvitado.setIcon(new javax.swing.ImageIcon("./src/main/java/resources/recibo-entrada.png"));
         btnIngresarInvitado.setText("Entrar Como Invitado");
+        btnIngresarInvitado.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnIngresarInvitado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnIngresarInvitadoActionPerformed(evt);
@@ -106,7 +105,7 @@ public class GUIPagLogin extends javax.swing.JInternalFrame {
         jPanel3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/login.png"))); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon("./src/main/java/resources/login.png"));
         jLabel3.setText("LOGIN USER");
         jPanel3.add(jLabel3);
 
@@ -126,7 +125,7 @@ public class GUIPagLogin extends javax.swing.JInternalFrame {
         if (UserService.autenticacion(txtUsuario.getText(), txtClave.getText())) {
             if (this.vistaMenuPlato != null) {
                 if (Security.usuario.getLogin() == TipoUser.ADMINISTRADOR) {
-                    successMessage("Username no existe.", "Atención");
+                    errorMessage("Username no existe.", "Atención");
                     return;
                 }
             }

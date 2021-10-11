@@ -1,6 +1,7 @@
-package co.mycompany.restaurante.cliente.infra;
+package co.mycompany.restaurante.cliente.access.servicejersey;
 
 import co.mycompany.restaurante.cliente.domain.entity.*;
+import co.mycompany.restaurante.cliente.infra.Utilities;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;

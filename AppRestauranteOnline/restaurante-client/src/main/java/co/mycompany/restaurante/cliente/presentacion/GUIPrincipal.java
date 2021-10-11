@@ -39,7 +39,7 @@ public class GUIPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        ImageIcon icon = new ImageIcon(getClass().getResource("/resources/logoRestaurante.jpg"));
+        ImageIcon icon = new ImageIcon("./src/main/java/resources/logoRestaurante.jpg");
         Image image = icon.getImage();
         dpDesktop = new javax.swing.JDesktopPane(){
             public void paintComponent(Graphics g){
@@ -79,7 +79,7 @@ public class GUIPrincipal extends javax.swing.JFrame {
         );
         dpDesktopLayout.setVerticalGroup(
             dpDesktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 380, Short.MAX_VALUE)
+            .addGap(0, 389, Short.MAX_VALUE)
         );
 
         getContentPane().add(dpDesktop);
@@ -87,12 +87,14 @@ public class GUIPrincipal extends javax.swing.JFrame {
         jPanel1.setLayout(new javax.swing.BoxLayout(jPanel1, javax.swing.BoxLayout.LINE_AXIS));
         getContentPane().add(jPanel1);
 
-        mnuOpciones.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/opciones.png"))); // NOI18N
+        mnuOpciones.setIcon(new javax.swing.ImageIcon("./src/main/java/resources/opciones.png"));
         mnuOpciones.setText("Opciones");
+        mnuOpciones.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         mnuRestaurantes.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_M, java.awt.event.InputEvent.CTRL_DOWN_MASK));
-        mnuRestaurantes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/menu.png"))); // NOI18N
+        mnuRestaurantes.setIcon(new javax.swing.ImageIcon("./src/main/java/resources/menu.png"));
         mnuRestaurantes.setText("Menu Restaurantes");
+        mnuRestaurantes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         mnuRestaurantes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mnuRestaurantesActionPerformed(evt);
@@ -100,8 +102,9 @@ public class GUIPrincipal extends javax.swing.JFrame {
         });
         mnuOpciones.add(mnuRestaurantes);
 
-        mnuAgregarComponentes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/mas.png"))); // NOI18N
+        mnuAgregarComponentes.setIcon(new javax.swing.ImageIcon("./src/main/java/resources/mas.png"));
         mnuAgregarComponentes.setText("AgregarComponentes");
+        mnuAgregarComponentes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         mnuAgregarComponentes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mnuAgregarComponentesActionPerformed(evt);
@@ -110,8 +113,9 @@ public class GUIPrincipal extends javax.swing.JFrame {
         mnuOpciones.add(mnuAgregarComponentes);
         mnuOpciones.add(jSeparator1);
 
-        mnuPedidos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/pedido.png"))); // NOI18N
+        mnuPedidos.setIcon(new javax.swing.ImageIcon("./src/main/java/resources/pedido.png"));
         mnuPedidos.setText("Pedidos");
+        mnuPedidos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         mnuPedidos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mnuPedidosActionPerformed(evt);
@@ -119,8 +123,9 @@ public class GUIPrincipal extends javax.swing.JFrame {
         });
         mnuOpciones.add(mnuPedidos);
 
-        mnuConfiguracionCuenta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/configuracion.png"))); // NOI18N
+        mnuConfiguracionCuenta.setIcon(new javax.swing.ImageIcon("./src/main/java/resources/configuracion.png"));
         mnuConfiguracionCuenta.setText("Configuracion De Cuenta");
+        mnuConfiguracionCuenta.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         mnuConfiguracionCuenta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mnuConfiguracionCuentaActionPerformed(evt);
@@ -129,8 +134,9 @@ public class GUIPrincipal extends javax.swing.JFrame {
         mnuOpciones.add(mnuConfiguracionCuenta);
 
         mnuCerrarSeccion.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.CTRL_DOWN_MASK));
-        mnuCerrarSeccion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/recibo-salida.png"))); // NOI18N
-        mnuCerrarSeccion.setText("Cerrar Seccion");
+        mnuCerrarSeccion.setIcon(new javax.swing.ImageIcon("./src/main/java/resources/recibo-salida.png"));
+        mnuCerrarSeccion.setText("Cerrar Sesión");
+        mnuCerrarSeccion.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         mnuCerrarSeccion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mnuCerrarSeccionActionPerformed(evt);
@@ -140,10 +146,12 @@ public class GUIPrincipal extends javax.swing.JFrame {
 
         jMenuBar1.add(mnuOpciones);
 
-        mnuInformes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/informe.png"))); // NOI18N
+        mnuInformes.setIcon(new javax.swing.ImageIcon("./src/main/java/resources/informe.png"));
         mnuInformes.setText("Informes");
+        mnuInformes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         mnuIngresosPorFecha.setText("Ingresos por fecha");
+        mnuIngresosPorFecha.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         mnuIngresosPorFecha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mnuIngresosPorFechaActionPerformed(evt);
@@ -152,6 +160,7 @@ public class GUIPrincipal extends javax.swing.JFrame {
         mnuInformes.add(mnuIngresosPorFecha);
 
         mnuConsultaAbierta.setText("Consulta Abierta");
+        mnuConsultaAbierta.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         mnuConsultaAbierta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mnuConsultaAbiertaActionPerformed(evt);
@@ -161,8 +170,9 @@ public class GUIPrincipal extends javax.swing.JFrame {
 
         jMenuBar1.add(mnuInformes);
 
-        mnuIniciarSecion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/loginMenu.png"))); // NOI18N
-        mnuIniciarSecion.setText("Iniciar Seccion");
+        mnuIniciarSecion.setIcon(new javax.swing.ImageIcon("./src/main/java/resources/loginMenu.png"));
+        mnuIniciarSecion.setText("Iniciar Sesión");
+        mnuIniciarSecion.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         mnuIniciarSecion.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 mnuIniciarSecionMouseClicked(evt);
@@ -170,11 +180,13 @@ public class GUIPrincipal extends javax.swing.JFrame {
         });
         jMenuBar1.add(mnuIniciarSecion);
 
-        mnuAyuda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/ayuda.png"))); // NOI18N
+        mnuAyuda.setIcon(new javax.swing.ImageIcon("./src/main/java/resources/ayuda.png"));
         mnuAyuda.setText("Ayuda");
+        mnuAyuda.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         mnuAcercaDe.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_H, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         mnuAcercaDe.setText("Acerca de");
+        mnuAcercaDe.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         mnuAcercaDe.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mnuAcercaDeActionPerformed(evt);
@@ -184,6 +196,7 @@ public class GUIPrincipal extends javax.swing.JFrame {
 
         mnuComoSeUsaLaApp.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         mnuComoSeUsaLaApp.setText("Como Se Usa");
+        mnuComoSeUsaLaApp.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         mnuComoSeUsaLaApp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mnuComoSeUsaLaAppActionPerformed(evt);
@@ -193,7 +206,7 @@ public class GUIPrincipal extends javax.swing.JFrame {
 
         jMenuBar1.add(mnuAyuda);
 
-        mnuSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/recibo-salida.png"))); // NOI18N
+        mnuSalir.setIcon(new javax.swing.ImageIcon("./src/main/java/resources/recibo-salida.png"));
         mnuSalir.setText("Salir");
         mnuSalir.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
