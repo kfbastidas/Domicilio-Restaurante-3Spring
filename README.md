@@ -2,6 +2,8 @@
 Proyecto Software y Laboratorio de Software 2
 Integrantes
 KEVITH FELIPE BASTIDAS CHILITO
-YEISON ORDOÑEZ
+YEISON ORDOÃ‘EZ
 WHALEN STIVEN CAICEDO
-JUAN DAVID MUÑOZ PASQUEL
+JUAN DAVID MUÃ‘OZ PASQUEL
+
+Video del software funcional: https://youtu.be/lpYUCsV-dDo
