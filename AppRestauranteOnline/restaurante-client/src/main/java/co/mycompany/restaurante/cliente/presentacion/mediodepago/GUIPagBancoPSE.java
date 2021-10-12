@@ -1,7 +1,6 @@
 package co.mycompany.restaurante.cliente.presentacion.mediodepago;
 import static co.mycompany.restaurante.cliente.infra.Messages.successMessage;
 import co.mycompany.restaurante.cliente.presentacion.GUIPagPagos;
-import javax.swing.JOptionPane;
 /**
  *
  * @author Kevith Felipe Bastidas
@@ -124,18 +123,23 @@ public class GUIPagBancoPSE extends javax.swing.JInternalFrame{
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    /**
+     * Confirma que el pago sea exitoso
+     * @param evt 
+     */
     private void btnConfirmarPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmarPedidoActionPerformed
         successMessage("Su pedido ha sido registrado por el restaurante","Pedido registrado");
         this.vistaPagos.getVistaPrincipal().agregarComponente(this.vistaPagos.getVistaMenuPlato());
         this.vistaPagos.getVistaMenuPlato().generarPedido("PSE");
     }//GEN-LAST:event_btnConfirmarPedidoActionPerformed
-
+    /**
+     * Cancela el pedido que estaba en proceso.
+     * @param evt 
+     */
     private void btnCancelarPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarPedidoActionPerformed
         this.vistaPagos.getVistaPrincipal().agregarComponente(this.vistaPagos.getVistaMenuPlato());
     }//GEN-LAST:event_btnCancelarPedidoActionPerformed
 
-    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCancelarPedido;
     private javax.swing.JButton btnConfirmarPedido;

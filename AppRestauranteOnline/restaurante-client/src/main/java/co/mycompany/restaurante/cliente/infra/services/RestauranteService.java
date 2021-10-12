@@ -37,6 +37,31 @@ public class RestauranteService{
         return service.addComponente(componente);
     }
     /**
+     * obtiene un componente de un id determinado.
+     * @param idComponente
+     * @return 
+     */
+    public Componente getComponente(int idComponente){
+        return service.getComponente(idComponente);
+    }
+    /**
+     * Actualiza un componenete a la base de datos
+     * @param idComponente
+     * @param componente
+     * @return
+     */
+    public String updateComponente(int idComponente,Componente componente){
+        return service.updateComponente(idComponente, componente);
+    }
+    /**
+     * Elimina un componente de la base de datos.
+     * @param idComponente
+     * @return 
+     */
+    public String deleteComponente(int idComponente){
+        return service.deleteComponente(idComponente);
+    }
+    /**
      * obtiene todos los componentes registrados
      * @return 
      */

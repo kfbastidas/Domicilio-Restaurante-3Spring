@@ -74,6 +74,16 @@ public class RestauranteAccessImplJersey implements IRestauranteAccess{
         return clientComponente.createComponente(componente);
     }
     /**
+     * Actualiza un componenete a la base de datos
+     * @param idComponente
+     * @param componente
+     * @return
+     */
+    @Override
+    public String updateComponente(int idComponente,Componente componente){
+        return clientComponente.updateComponente(componente, idComponente+"");
+    }
+    /**
      * Elimina un componente de la base de datos.
      * @param idComponente
      * @return 

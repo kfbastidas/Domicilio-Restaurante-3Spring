@@ -1,2 +1,0 @@
-wsl --set-default-version 2 : inicia
-wsl --shutdown : finaliza vmmem

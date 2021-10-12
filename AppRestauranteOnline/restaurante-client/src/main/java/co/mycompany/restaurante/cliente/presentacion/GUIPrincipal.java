@@ -231,9 +231,10 @@ public class GUIPrincipal extends javax.swing.JFrame {
      */
     private void mnuAgregarComponentesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuAgregarComponentesActionPerformed
         //dpDesktop.removeAll();
-        GUIPagComponente vistaAgregarComponente = new GUIPagComponente(service);
+        //GUIPagComponente vistaAgregarComponente = new GUIPagComponente(service);
+        GUIPagAgregarComponentes vistaAgregarComponente = new GUIPagAgregarComponentes();
         agregarComponente(vistaAgregarComponente);
-        vistaAgregarComponente.show();
+//        vistaAgregarComponente.show();
     }//GEN-LAST:event_mnuAgregarComponentesActionPerformed
     /**
      * Muestra los pedidos del dia - En construccion

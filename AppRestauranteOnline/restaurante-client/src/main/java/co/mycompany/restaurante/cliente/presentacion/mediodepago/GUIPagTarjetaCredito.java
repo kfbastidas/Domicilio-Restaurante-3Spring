@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package co.mycompany.restaurante.cliente.presentacion.mediodepago;
 
 import static co.mycompany.restaurante.cliente.infra.Messages.successMessage;
@@ -194,7 +189,10 @@ public class GUIPagTarjetaCredito extends javax.swing.JInternalFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    /**
+     * Confirma que el pago sea exitoso
+     * @param evt 
+     */
     private void btnConfirmarPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmarPedidoActionPerformed
         if(txtNumTarjeta.getText().isBlank() || 
            txtNombreApellido.getText().isBlank() || 
@@ -210,7 +208,10 @@ public class GUIPagTarjetaCredito extends javax.swing.JInternalFrame {
         }
         
     }//GEN-LAST:event_btnConfirmarPedidoActionPerformed
-
+    /**
+     * Cancela el pedido que estaba en proceso.
+     * @param evt 
+     */
     private void btnCancelarPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarPedidoActionPerformed
         // TODO add your handling code here:
         this.vistaPagos.getVistaPrincipal().agregarComponente(this.vistaPagos.getVistaMenuPlato());

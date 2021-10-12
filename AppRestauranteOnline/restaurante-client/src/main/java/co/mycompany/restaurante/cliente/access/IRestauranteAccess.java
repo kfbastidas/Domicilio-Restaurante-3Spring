@@ -21,7 +21,14 @@ public interface IRestauranteAccess {
      * @param componente
      * @return
      */
-    public String addComponente(Componente componente);
+    public String addComponente(Componente componente); 
+    /**
+     * Actualiza un componenete a la base de datos
+     * @param idComponente
+     * @param componente
+     * @return
+     */
+    public String updateComponente(int idComponente,Componente componente);
     /**
      * Elimina un componente de la base de datos.
      * @param idComponente

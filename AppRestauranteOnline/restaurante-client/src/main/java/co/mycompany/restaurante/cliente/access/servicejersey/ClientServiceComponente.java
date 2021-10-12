@@ -77,7 +77,18 @@ public class ClientServiceComponente {
         return componentes;
     } 
     
-    
+    public String updateComponente(Object requestEntity,String id) throws ClientErrorException {
+        initComponente();
+        webTarget = webTarget.path(java.text.MessageFormat.format("{0}", new Object[]{id}));
+        try {
+            webTarget.request(MediaType.APPLICATION_JSON).put(Entity.entity(requestEntity, MediaType.APPLICATION_JSON), String.class);
+            close();
+            return "Componente actualizado correctamente";
+        } catch (Exception e) {
+            close();
+            return "Error, el componente con ese id y nombre ya existe";
+        }
+    }
     
     private void close() {
         client.close();
