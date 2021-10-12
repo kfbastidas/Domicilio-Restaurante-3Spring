@@ -27,4 +27,9 @@ microservicios en Spring boot.
 3. [Definicion De La Arquitectura](https://drive.google.com/file/d/1zyhaZ5ZKF5dCqTpysxy1SGf_9DRNLR7H/view?usp=sharing)
 #
 
-Video del software funcional: https://youtu.be/lpYUCsV-dDo
+##Video del software funcional: 
+https://youtu.be/lpYUCsV-dDo
+
+[![Alt text](https://img.youtube.com/vi/lpYUCsV-dDo/0.jpg)](https://www.youtube.com/watch?v=lpYUCsV-dDo)
+
+#
