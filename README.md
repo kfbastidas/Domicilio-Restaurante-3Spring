@@ -53,7 +53,7 @@ experiencia y un grado de experticia en el mismo. Además de esto, Java tiene va
 para la conexión a base de datos), e-mail (necesaria para la interfaz y la interacción del repartidor). Por último, pero no menos importante, 
 Java se ejecuta en una máquina virtual, brindando la opción de trabajarlo en múltiples plataformas.
 
-3. Framework: Para este desarrollo se hará uso de Spring Boot, framework partidario de SpringFramework. Este framework facilita tanto la tarea de 
+3. Framework: Para este desarrollo se hará uso de Spring Boot, framework JEE partidario de SpringFramework. Este framework facilita tanto la tarea de 
 desarrollo como la tarea de despliegue en un servidor. Spring Boot se enfoca en facilitar las tareas que no son de desarrollo, para que cada 
 desarrollador se encargue y se enfoque únicamente en la tarea de desarrollar, ganando tiempo y esfuerzo.
 
