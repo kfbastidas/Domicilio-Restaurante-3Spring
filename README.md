@@ -64,3 +64,21 @@ también.
 
 #
 
+##Lecciones Aprendidas
+Lecciones aprendidas:
+1. En primer lugar, es importante mencionar que se tuvo un fuerte aprendizaje sobre el trabajo y la organización de un equipo. Tomando como base que cuando 
+el equipo se ausenta, uno de los integrantes tiene que hacerse cargo de toda la responsabilidad,  cargándose con demasiado trabajo.
+
+2. Se tuvo un aprendizaje de la distribución de la carga o del trabajo en todo el equipo, no solamente poniendo todo el trabajo en una sola persona
+
+3. El equipo tuvo un aprendizaje del manejo y la organización de las arquitecturas de Software, además del uso de múltiples patrones de diseño para mejorar 
+el Software que se esté realizando
+
+4. Una lección aprendida, importante fue el aprovechamiento del material y las bases que se dan por parte de los docentes,  siendo que estos otorgan un gran 
+conocimiento. Es importante mencionar que también se tuvo un gran aprendizaje buscando material externo para claridad de algunos temas.
+
+5. Una de las lecciones más influyentes es la organización del tiempo, con el fin de no sobrecargarse de trabajo uno o dos días antes de las entregas 
+correspondientes.
+
+#
+
