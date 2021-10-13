@@ -64,8 +64,8 @@ también.
 
 #
 
-##Lecciones Aprendidas
-Lecciones aprendidas:
+## Lecciones Aprendidas
+
 1. En primer lugar, es importante mencionar que se tuvo un fuerte aprendizaje sobre el trabajo y la organización de un equipo. Tomando como base que cuando 
 el equipo se ausenta, uno de los integrantes tiene que hacerse cargo de toda la responsabilidad,  cargándose con demasiado trabajo.
 
