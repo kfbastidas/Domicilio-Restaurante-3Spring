@@ -49,7 +49,7 @@ el dominio o la lógica del negocio y haciendo que las demás capas sean exterio
 será fácil de modificar y nos permitirán hacer cambios en la aplicación de manera más fácil, permitiéndonos tener más cohesión, mejor acoplamiento.
 
 2. Lenguaje de programación: Se utilizará el lenguaje de programación Java, debido a que el grupo de desarrollo del proyecto cuenta con 
-experiencia y un grado de experticia en el mismo. Además de esto, Java EE tiene varias especificaciones de API, como JDBC (brindando una alternativa 
+experiencia y un grado de experticia en el mismo. Además de esto, Java tiene varias especificaciones de API, como JDBC (brindando una alternativa 
 para la conexión a base de datos), e-mail (necesaria para la interfaz y la interacción del repartidor). Por último, pero no menos importante, 
 Java se ejecuta en una máquina virtual, brindando la opción de trabajarlo en múltiples plataformas.
 
